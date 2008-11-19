@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DSFTime.1 = s 'X3DSFTime Class'
+	{
+		CLSID = s '{8C7DB996-4067-4E0B-831A-380D1C3B22B0}'
+	}
+	Anima.X3DSFTime = s 'X3DSFTime Class'
+	{
+		CLSID = s '{8C7DB996-4067-4E0B-831A-380D1C3B22B0}'
+		CurVer = s 'Anima.X3DSFTime.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8C7DB996-4067-4E0B-831A-380D1C3B22B0} = s 'X3DSFTime Class'
+		{
+			ProgID = s 'Anima.X3DSFTime.1'
+			VersionIndependentProgID = s 'Anima.X3DSFTime'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

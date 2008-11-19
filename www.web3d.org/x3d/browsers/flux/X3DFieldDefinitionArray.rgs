@@ -1,0 +1,25 @@
+HKCR
+{
+	Anima.X3DFieldDefinitionArray.1 = s 'X3DFieldDefinitionArray Class'
+	{
+		CLSID = s '{7C1F3AF8-C47D-4D55-9F25-64B9972C1126}'
+	}
+	Anima.X3DFieldDefinitionArray = s 'X3DFieldDefinitionArray Class'
+	{
+		CLSID = s '{7C1F3AF8-C47D-4D55-9F25-64B9972C1126}'
+		CurVer = s 'Anima.X3DFieldDefinitionArray.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {7C1F3AF8-C47D-4D55-9F25-64B9972C1126} = s 'X3DFieldDefinitionArray Class'
+		{
+			ProgID = s 'Anima.X3DFieldDefinitionArray.1'
+			VersionIndependentProgID = s 'Anima.X3DFieldDefinitionArray'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

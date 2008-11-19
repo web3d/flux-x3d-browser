@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DFieldEventListener.1 = s 'X3DFieldEventListener Class'
+	{
+		CLSID = s '{DAB90B62-3B19-47ED-AC2D-F71063DAF907}'
+	}
+	Anima.X3DFieldEventListener = s 'X3DFieldEventListener Class'
+	{
+		CLSID = s '{DAB90B62-3B19-47ED-AC2D-F71063DAF907}'
+		CurVer = s 'Anima.X3DFieldEventListener.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {DAB90B62-3B19-47ED-AC2D-F71063DAF907} = s 'X3DFieldEventListener Class'
+		{
+			ProgID = s 'Anima.X3DFieldEventListener.1'
+			VersionIndependentProgID = s 'Anima.X3DFieldEventListener'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: fluxdx9 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP2F1.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I ".." /I "..\3rdParty\DX9\include" /I "..\Animation" /I "..\Core" /I "..\DX8" /I "..\DX9" /I "..\ECMAScript" /I "..\Events" /I "..\EventUtilities" /I "..\Graphics" /I "..\HAnim" /I "..\ImageIO" /I "..\Input" /I "..\Layers" /I "..\Loaders" /I "..\Math" /I "..\Math3D" /I "..\NURBS" /I "..\ParticleSystems" /I "..\SAI" /I "..\Scene" /I "..\Scripting" /I "..\Shaders" /I "..\Sound" /I "..\Threading" /I "..\Time" /I "..\UI" /I "..\Video" /I "..\Viewer" /I "..\Windowing" /I "..\WWW" /D "EXPORT_FLUXDX9" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Debug/fluxdx9.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Keith\flux_svn\DX9\anmd3ddevice9.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP2F1.tmp" 
+Creating temporary file "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP2F2.tmp" with contents
+[
+../fluxcore/Debug/fluxcore.lib ../3rdParty\DX9\lib\strmbasd.lib Msimg32.lib glu32.lib wininet.lib shlwapi.lib winmm.lib dsound.lib dinput8.lib d3d9.lib d3dx9.lib dxerr9.lib dxguid.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/fluxdx9.pdb" /debug /machine:I386 /def:".\fluxdx9.def" /out:"../Debug/fluxdx9.dll" /implib:"Debug/fluxdx9.lib" /pdbtype:sept 
+.\Debug\anmd3ddevice9.obj
+.\Debug\anmd3derrors9.obj
+.\Debug\anmd3dgraphics9.obj
+.\Debug\anmdikeyboard8.obj
+.\Debug\anmdimouse8.obj
+.\Debug\anmdinput8.obj
+.\Debug\anmdshowmovietextureblitter9.obj
+.\Debug\fluxdx9.obj
+.\Debug\StdAfx.obj
+.\Debug\fluxdx9.res
+]
+Creating command line "link.exe @C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP2F2.tmp"
+<h3>Output Window</h3>
+Compiling...
+anmd3ddevice9.cpp
+Linking...
+   Creating library Debug/fluxdx9.lib and object Debug/fluxdx9.exp
+
+
+
+<h3>Results</h3>
+fluxdx9.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

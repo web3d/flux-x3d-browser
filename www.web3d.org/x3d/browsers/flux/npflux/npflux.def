@@ -1,0 +1,9 @@
+; npflux.def : Declares the module parameters for the DLL.
+
+LIBRARY      "npflux"
+DESCRIPTION  'npflux Windows Dynamic Link Library'
+
+EXPORTS
+	NP_GetEntryPoints   @1
+	NP_Initialize       @2
+	NP_Shutdown         @3

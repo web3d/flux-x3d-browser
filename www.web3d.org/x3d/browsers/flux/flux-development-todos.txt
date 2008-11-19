@@ -1,0 +1,50 @@
+* get rid of DX9
+* get rid of CG
+integrate TextureTransform
+* rename RotationInterpolator
+make sure tools come along
+
+to do's for public list
+
+Text/Languages
+
+	Unicode build (summer)
+	utf-8 support (summer)
+
+Performance
+
+	State sorting (summer)
+	Implement StaticGroup (summer)
+
+
+Conformance
+
+	Implement COMPONENT/PROFILE (instead of just reading the tags)
+	Migrate layer extensions to V2 standard layer nodes
+
+Stability
+
+	Graphics Leaks
+
+Platforms
+
+	Open GL port (late summer)
+	Want to do Mac, Linux - no dates yet
+
+Project
+
+	Create automatic build steps for .y files - right now we do manually
+	Removed hard-coded paths to DX and Mozilla headers and libraries
+	Fix all remaining compiler warnings
+	Build under VC7/.NET
+	Organize directories and libs on an X3D component basis
+
+Documentation
+
+	Internal design documentation - needs to be cleaned up and released
+
+
+Installer
+
+	No packaged installer yet
+

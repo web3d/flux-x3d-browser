@@ -1,0 +1,7 @@
+; fluxcore.def : Declares the module parameters for the DLL.
+
+LIBRARY      "fluxcore"
+DESCRIPTION  'fluxcore Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

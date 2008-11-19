@@ -1,0 +1,1086 @@
+/********************************************************************************
+ * Flux
+ *
+ * File: Anima.odl
+ * Description: type library source for ActiveX Control project
+ *
+ * (C) 2001-2006 by Media Machines, Inc.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *********************************************************************************/
+
+// Anima.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (Anima.tlb) that will become a resource in
+// Anima.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+import "oaidl.idl";
+
+
+[ uuid(CB2426CF-7360-42CA-AEF2-6FBD9F959ED4), version(1.0),
+  helpfile("Anima.hlp"),
+  helpstring("Anima ActiveX Control module"),
+  control ]
+library ANIMALib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	// forward declarations
+	interface X3DNode;
+	interface X3DBrowser;
+	interface X3DField;
+	interface X3DEventOutObserver;
+	interface X3DExecutionContext;
+	interface X3DScene;
+	interface X3DBrowserListener;
+	interface X3DFieldEventListener;
+	interface X3DRoute;
+	interface X3DSFBool;
+	interface X3DSFColor;
+	interface X3DSFFloat;
+	interface X3DSFInt32;
+	interface X3DSFNode;
+	interface X3DSFRotation;
+	interface X3DSFString;
+	interface X3DSFVec2f;
+	interface X3DSFVec3f;
+	interface X3DNodeArray;
+	interface X3DFieldDefinition;
+	interface X3DFieldDefinitionArray;
+	interface X3DProtoDeclaration;
+	interface X3DProtoDeclarationArray;
+
+	//  Primary dispatch interface for CAnimaCtrl
+
+	[ uuid(44166B5D-CA84-4DFE-9ABB-5B03E72E9C05),
+	  helpstring("Dispatch interface for Anima Control"), hidden ]
+	dispinterface _DAnima
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAnimaCtrl)
+			[id(1)] BSTR src;
+			[id(2)] BSTR bgcolor;
+			[id(3)] BSTR navigation;
+			[id(4)] boolean antialias;
+			[id(5)] BSTR PrimitiveQuality;
+			[id(6)] boolean DASHBOARD;
+			[id(7)] BSTR NavigationMode;
+			[id(13)] BSTR MaxTextureSize;
+			[id(14)] BSTR LoadScreen;
+			[id(15)] BSTR RightMouseMenu;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAnimaCtrl)
+			[id(8)] void jumpTo(BSTR url, BSTR target);
+			[id(9)] X3DBrowser* getBrowser();
+			[id(10)] void NextViewpoint();
+			[id(11)] void PreviousViewpoint();
+			[id(12)] IDispatch* getFluxPlayer();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CAnimaCtrl
+
+	[ uuid(CFB6910F-3849-417E-9217-A8532E7A1380),
+	  helpstring("Event interface for Anima Control") ]
+	dispinterface _DAnimaEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CAnimaCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	// types
+	typedef enum X3DFieldAccess {
+		X3DInitializeOnly,
+		X3DInputOnly,
+		X3DOutputOnly,
+		X3DInputOutput,
+	} X3DFieldAccess;
+
+	typedef enum X3DFieldType {
+		
+		X3DUnknownFieldType = 0,
+
+		// Ordered for easy compatibility with Java language binding since
+		// that came first...
+		X3DSFBoolType,
+		X3DMFBoolType,
+		X3DSFColorType,
+		X3DMFColorType,
+		X3DSFColorRGBAType,
+		X3DMFColorRGBAType,
+		X3DSFDoubleType,
+		X3DMFDoubleType,
+		X3DSFFloatType,
+		X3DMFFloatType,
+		X3DSFImageType,
+		X3DMFImageType,
+		X3DSFInt32Type,
+		X3DMFInt32Type,
+		X3DSFNodeType,
+		X3DMFNodeType,
+		X3DSFRotationType,
+		X3DMFRotationType,
+		X3DSFStringType,
+		X3DMFStringType,
+		X3DSFTimeType,
+		X3DMFTimeType,
+		X3DSFVec2fType,
+		X3DMFVec2fType,
+		X3DSFVec2dType,
+		X3DMFVec2dType,
+		X3DSFVec3fType,
+		X3DMFVec3fType,
+		X3DSFVec3dType,
+		X3DMFVec3dType,
+	} X3DFieldType;
+
+	typedef enum X3DEncodingType {
+		X3DNO_SCENE						= 0,
+		X3DSCRIPTED_ENCODING			= 1,
+		X3DASCII_ENCODING				= 2,
+		X3DCLASSIC_VRML_ENCODING		= 3,
+		X3DXML_ENCODING					= 4,
+		X3DBINARY_ENCODING				= 5,
+		X3DBIFS_ENCODING				= 6,
+		X3DLAST_STD_ENCODING			= 100,
+	} X3DEncodingType ;
+
+	typedef enum X3DBrowserEvent {
+		X3DBROWSER_INITIALIZED			= 0,
+		X3DBROWSER_SHUTDOWN				= 1,
+		X3DBROWSER_CONNECTIONERROR		= 2,
+		X3DBROWSER_URLERROR				= 3,
+	} X3DBrowserEvent ;
+
+	[
+		object,
+		uuid(33A5C345-9C42-430E-A208-3FE942999486),
+		dual,
+		helpstring("X3DNode Interface"),
+		pointer_default(unique)
+	]
+	interface X3DNode : IDispatch
+	{
+		[id(1), helpstring("method setNativeNode-- for internal use only")]
+			HRESULT setNativeNode([in] void *pNativeNode);
+		[id(2), helpstring("method getNativeNode-- for internal use only")]
+			HRESULT getNativeNode([out, retval] void *ppNativeNode);
+		[id(3), helpstring("method getTypeName")] HRESULT getTypeName([out, retval] BSTR *typenm);
+		[id(6), helpstring("method getField")] HRESULT getField([in] BSTR name, [out, retval] X3DField **result);
+		[id(7), helpstring("method setContext")] HRESULT setContext([in] X3DExecutionContext *context);
+		[id(8), helpstring("method getContext")] HRESULT getContext([out, retval] X3DExecutionContext **result);
+		[id(9), helpstring("method getName")] HRESULT getName([out, retval] BSTR *name);
+		[id(10), helpstring("method getNumFields")] HRESULT getNumFields([out, retval] int *result);
+		[id(11), helpstring("method getFieldInfo")] HRESULT getFieldInfo([in] int fieldIndex, [out] X3DFieldAccess *accessType, [out] X3DFieldType *fieldType, [out] BSTR *fieldName);
+		[propget, id(12), helpstring("property Text")] HRESULT Text([out, retval] BSTR *pVal);
+		[id(13), helpstring("method getFieldDefinitions")] HRESULT getFieldDefinitions([out, retval] X3DFieldDefinitionArray **fieldDefinitions);
+	};
+	[
+		object,
+		uuid(77590C91-073D-428E-8940-7CD14B1897C8),
+		dual,
+		helpstring("X3DField Interface"),
+		pointer_default(unique)
+	]
+	interface X3DField : IDispatch
+	{
+		[id(1), helpstring("method attach -- for internal use only")]
+			HRESULT attach(X3DExecutionContext *context, void *pNode, void *pField, void *mid, long valueType);
+		[id(2), helpstring("method addFieldEventListener")] HRESULT addFieldEventListener([in] IDispatch *listener);
+		[id(3), helpstring("method removeFieldEventListener")] HRESULT removeFieldEventListener([in] IDispatch *listener);
+		[id(4), helpstring("method getAccessType")] HRESULT getAccessType([out, retval] X3DFieldAccess *accesstype);
+		[id(5), helpstring("method getType")] HRESULT getType([out, retval] X3DFieldType *fieldtype);
+		[id(6), helpstring("method getName")] HRESULT getName([out, retval] BSTR *name);
+		[id(7), helpstring("method dispose")] HRESULT dispose();
+	};
+	[
+		object,
+		uuid(1DDF9D8D-6931-4B5D-A2F6-8A341A1AD0CF),
+		dual,
+		helpstring("X3DBrowser Interface"),
+		pointer_default(unique)
+	]
+	interface X3DBrowser : IDispatch
+	{
+		[id(1), helpstring("method getName")] HRESULT getName([out, retval] BSTR *value);
+		[id(2), helpstring("method getVersion")] HRESULT getVersion([out, retval] BSTR *value);
+		[id(3), helpstring("method getCurrentSpeed")] HRESULT getCurrentSpeed([out, retval] float *value);
+		[id(4), helpstring("method getCurrentFrameRate")] HRESULT getCurrentFrameRate([out, retval] float *value);
+		[id(5), helpstring("method getWorldURL")] HRESULT getWorldURL([out, retval] BSTR *value);
+		[id(6), helpstring("method replaceWorld")] HRESULT replaceWorld([in] X3DScene *value);
+		[id(7), helpstring("method loadURL")] HRESULT loadURL([in] int nUrls, [in, size_is(nUrls)] BSTR *url, [in] int nParams, [in,size_is(nParams)] BSTR *params);
+		[id(8), helpstring("method setDescription")] HRESULT setDescription([in] BSTR description);
+		[id(9), helpstring("method createX3DFromString")] HRESULT createX3DFromString([in] BSTR x3dSource, [out, retval] X3DScene **scenereturn);
+		[id(10), helpstring("method createX3DFromURL")] HRESULT createX3DFromURL([in] BSTR url, [out, retval] X3DScene **scenereturn);
+		// old  VRML style; here for reference
+		// [id(10), helpstring("method createX3DFromURL")] HRESULT createX3DFromURL([in] BSTR url, [in] X3DNode *node, [in] BSTR event);
+
+		// Extensions
+		[id(11), helpstring("method setClosure")] HRESULT setClosure([in] void *closure);
+		[id(12), helpstring("method getClosure")] HRESULT getClosure([out, retval] void *closure);
+
+		[id(13), helpstring("method print")] HRESULT print([in] BSTR str);
+		[id(14), helpstring("method loadUrlS")] HRESULT loadUrlS(BSTR url);
+		[id(15), helpstring("method getExecutionContext")] HRESULT getExecutionContext([out, retval] X3DExecutionContext **ppContext);
+		[id(16), helpstring("method addBrowserListener")] HRESULT addBrowserListener([in] IDispatch *pListener);
+		[id(17), helpstring("method removeBrowserListener")] HRESULT removeBrowserListener([in] IDispatch *pListener);
+		[id(18), helpstring("method firstViewpoint")] HRESULT firstViewpoint();
+		[id(19), helpstring("method lastViewpoint")] HRESULT lastViewpoint();
+		[id(20), helpstring("method nextViewpoint")] HRESULT nextViewpoint();
+		[id(21), helpstring("method previousViewpoint")] HRESULT previousViewpoint();
+		[propget, id(22), helpstring("property viewpoints")] HRESULT viewpoints([out, retval] X3DNodeArray **pVal);
+	};
+	[
+		object,
+		uuid(2DE0158A-0C8E-4667-820C-074953FB957A),
+		dual,
+		helpstring("X3DSFBool Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFBool : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([out,retval] VARIANT_BOOL *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in] VARIANT_BOOL value);
+	};
+	[
+		object,
+		uuid(4A564091-9A41-43DC-AE4C-4A1457D5A53E),
+		dual,
+		helpstring("X3DMField Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMField : X3DField
+	{
+		[propget, id(8), helpstring("method Count")] HRESULT Count([out, retval] long *pVal);
+		[propget, id(9), helpstring("property length")] HRESULT length([out, retval] long *pVal);
+		[propput, id(9), helpstring("property length")] HRESULT length([in] long newVal);
+		[id(DISPID_VALUE), helpstring("method Item")] HRESULT Item([in] VARIANT index, [out, retval] VARIANT *pItem);
+	};
+	[
+		object,
+		uuid(16662D28-9E70-4161-A2AB-F0C65506DF3B),
+		dual,
+		helpstring("X3DMFColor Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFColor : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(12), helpstring("method setValue")] HRESULT set1Value([in] int index, [in] X3DSFColor *value);
+		[id(13), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out, retval] X3DSFColor **value);
+	};
+	[
+		object,
+		uuid(041BC54C-F94B-4829-A05E-8E7059423524),
+		dual,
+		helpstring("X3DMFNode Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFNode : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([out, retval] X3DNodeArray **value);
+		// [id(10), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out, size_is(cnt)] X3DNode **value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] X3DNodeArray *value);
+		[id(12), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out] X3DNode **value);
+		[id(13), helpstring("method get1ValueV")] HRESULT get1ValueV([in] int index, [out, retval] VARIANT *value);
+		[id(14), helpstring("method set1Value")] HRESULT set1Value([in] int index, [in] X3DNode *value);
+	};
+	[
+		object,
+		uuid(3172E8A3-97EB-4DD3-866A-3FBC0F6EA457),
+		dual,
+		helpstring("X3DSFTime Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFTime : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([out, retval] double *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in] double *value);
+	};
+
+	//  Class information for CAnimaCtrl
+
+	[ uuid(918B202D-8E8F-4649-A70B-E9B178FEDC58),
+	  helpstring("Anima Control"), control ]
+	coclass Anima
+	{
+		[default] dispinterface _DAnima;
+		[default, source] dispinterface _DAnimaEvents;
+	};
+
+
+
+	//  Primary dispatch interface for CDashboard1
+	
+	[ uuid(D181AEDA-E6CC-4556-8948-23D2C6222531) ]
+	dispinterface IDashboard1
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDashboard1)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDashboard1)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CDashboard1
+
+	[ uuid(25B54D15-EABB-4E27-B84C-2E2896368E89) ]
+	coclass Dashboard
+	{
+		[default] dispinterface IDashboard1;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+	[
+		uuid(31042E47-EB83-4D36-BC6A-00D29006FEE5),
+		helpstring("X3DNode Class")
+	]
+	coclass CoX3DNode
+	{
+		[default] interface X3DNode;
+	};
+	[
+		uuid(36ECD09E-F20D-4897-959D-95761801B87D),
+		helpstring("X3DField Class")
+	]
+	coclass CoX3DField
+	{
+		[default] interface X3DField;
+	};
+	[
+		uuid(F61F61CE-117D-4772-B2CB-388A2CFACA52),
+		helpstring("X3DBrowser Class")
+	]
+	coclass CoX3DBrowser
+	{
+		[default] interface X3DBrowser;
+	};
+	[
+		uuid(4F65CFBC-E8C1-4835-B2DB-4A59628FFBC2),
+		helpstring("X3DSFBool Class")
+	]
+	coclass CoX3DSFBool
+	{
+		[default] interface X3DSFBool;
+	};
+	[
+		uuid(08F3F97A-01D7-4E0D-B4F4-46EA035E08E4),
+		helpstring("X3DMField Class")
+	]
+	coclass CoX3DMField
+	{
+		[default] interface X3DMField;
+	};
+	[
+		uuid(7E36E664-91FD-4702-B427-6D8083A75F05),
+		helpstring("X3DMFColor Class")
+	]
+	coclass CoX3DMFColor
+	{
+		[default] interface X3DMFColor;
+	};
+	[
+		uuid(6F11013E-CFA1-47A2-87F9-D491E6E108A8),
+		helpstring("X3DMFNode Class")
+	]
+	coclass CoX3DMFNode
+	{
+		[default] interface X3DMFNode;
+	};
+	[
+		uuid(7FCE58B1-F0BD-4696-A370-F9EF021FC3D5),
+		helpstring("_X3DSFTimeEvents Interface")
+	]
+	dispinterface _X3DSFTimeEvents
+	{
+		properties:
+		methods:
+		[id(1), helpstring("method valueChanged")] HRESULT valueChanged(double value);
+	};
+	[
+		object,
+		uuid(3497632D-0CA7-4EC8-BCDA-09564868B9F2),
+		dual,
+		helpstring("X3DEventOutObserver Interface"),
+		pointer_default(unique)
+	]
+	interface X3DEventOutObserver : IDispatch
+	{
+		[id(1), helpstring("method callbackFunction")] HRESULT callbackFunction([in] X3DField *value,
+			[in] double timeStamp, [in] IDispatch *userData);
+	};
+	[
+		object,
+		uuid(C7C5930C-186E-4B78-8040-BD1226828888),
+		dual,
+		helpstring("X3DSFColor Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFColor : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([in, out, size_is(3)] float *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in, size_is(3)] float *value);
+		[propget, id(10), helpstring("property r")] HRESULT r([out, retval] float *pVal);
+		[propput, id(10), helpstring("property r")] HRESULT r([in] float newVal);
+		[propget, id(11), helpstring("property g")] HRESULT g([out, retval] float *pVal);
+		[propput, id(11), helpstring("property g")] HRESULT g([in] float newVal);
+		[propget, id(12), helpstring("property b")] HRESULT b([out, retval] float *pVal);
+		[propput, id(12), helpstring("property b")] HRESULT b([in] float newVal);
+	};
+	[
+		object,
+		uuid(2D91D7E4-8A06-4626-8A41-6877657D1034),
+		dual,
+		helpstring("X3DSFFloat Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFFloat : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([out,retval] float *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in] float value);
+	};
+	[
+		object,
+		uuid(1DB18114-E6A1-490E-A4C2-A29201999696),
+		dual,
+		helpstring("X3DSFInt32 Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFInt32 : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([out, retval] long *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in] long value);
+	};
+	[
+		object,
+		uuid(9410F6BF-BE28-48F8-97E8-7B040FC8E25C),
+		dual,
+		helpstring("X3DSFNode Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFNode : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([out,retval] X3DNode **value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in] X3DNode *value);
+	};
+	[
+		object,
+		uuid(B13C7843-EB3B-4D36-8C77-7C4DD37277F1),
+		dual,
+		helpstring("X3DSFRotation Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFRotation : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([in, out, size_is(4)] float *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in, size_is(4)] float *value);
+		[propget, id(10), helpstring("property x")] HRESULT x([out, retval] float *pVal);
+		[propput, id(10), helpstring("property x")] HRESULT x([in] float newVal);
+		[propget, id(11), helpstring("property y")] HRESULT y([out, retval] float *pVal);
+		[propput, id(11), helpstring("property y")] HRESULT y([in] float newVal);
+		[propget, id(12), helpstring("property z")] HRESULT z([out, retval] float *pVal);
+		[propput, id(12), helpstring("property z")] HRESULT z([in] float newVal);
+		[propget, id(13), helpstring("property angle")] HRESULT angle([out, retval] float *pVal);
+		[propput, id(13), helpstring("property angle")] HRESULT angle([in] float newVal);
+	};
+	[
+		object,
+		uuid(AD9E8B1D-84CB-498F-B050-FFD913A5D875),
+		dual,
+		helpstring("X3DSFString Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFString : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([in,out] BSTR *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in] BSTR value);
+	};
+	[
+		object,
+		uuid(8152C989-858A-470D-BC61-0532EC81A902),
+		dual,
+		helpstring("X3DSFVec2f Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFVec2f : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([in,out,size_is(2)] float *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in,size_is(2)] float *value);
+		[propget, id(10), helpstring("property x")] HRESULT x([out, retval] float *pVal);
+		[propput, id(10), helpstring("property x")] HRESULT x([in] float newVal);
+		[propget, id(11), helpstring("property y")] HRESULT y([out, retval] float *pVal);
+		[propput, id(11), helpstring("property y")] HRESULT y([in] float newVal);
+	};
+	[
+		object,
+		uuid(86771EAA-A5EB-4F9F-82C1-437160DAB4A5),
+		dual,
+		helpstring("X3DSFVec3f Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFVec3f : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([in,out,size_is(3)] float *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in, size_is(3)] float *value);
+		[propget, id(10), helpstring("property x")] HRESULT x([out, retval] float *pVal);
+		[propput, id(10), helpstring("property x")] HRESULT x([in] float newVal);
+		[propget, id(11), helpstring("property y")] HRESULT y([out, retval] float *pVal);
+		[propput, id(11), helpstring("property y")] HRESULT y([in] float newVal);
+		[propget, id(12), helpstring("property z")] HRESULT z([out, retval] float *pVal);
+		[propput, id(12), helpstring("property z")] HRESULT z([in] float newVal);
+	};
+	[
+		object,
+		uuid(B4365441-8859-413F-8F16-EA0AD6E98D00),
+		dual,
+		helpstring("X3DMFFloat Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFFloat : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out,  size_is(cnt)] float *value);
+		[id(12), helpstring("method setValue")] HRESULT set1Value([in] int index, [in] float value);
+		[id(13), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out, retval] float *value);
+	};
+	[
+		object,
+		uuid(CE3B6FCD-8E08-4191-997A-B25DDA640AEF),
+		dual,
+		helpstring("X3DMFInt32 Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFInt32 : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([in] int cnt, [in, out, size_is(cnt)] long *value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out, size_is(cnt)] long *value);
+		[id(12), helpstring("method setValue")] HRESULT set1Value([in] int index, [in] long value);
+		[id(13), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out, retval] long *value);
+	};
+	[
+		object,
+		uuid(43D3E0EA-68EF-4923-85DA-D1D9BEF80212),
+		dual,
+		helpstring("X3DMFRotation Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFRotation : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(12), helpstring("method setValue")] HRESULT set1Value([in] int index, [in] X3DSFRotation *value);
+		[id(13), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out, retval] X3DSFRotation **value);
+	};
+	[
+		object,
+		uuid(28FA5559-97BC-42CD-8E9A-B921F4B1A8CC),
+		dual,
+		helpstring("X3DMFString Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFString : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([in] int cnt, [in, out, size_is(cnt)] BSTR *value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out, size_is(cnt)] BSTR *value);
+		[id(12), helpstring("method setValue")] HRESULT set1Value([in] int index, [in] BSTR value);
+		[id(13), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out, retval] BSTR *value);
+	};
+	[
+		object,
+		uuid(7C4602A2-F24C-40F0-BA32-92C9AECEB11E),
+		dual,
+		helpstring("X3DMFVec2f Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFVec2f : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(12), helpstring("method setValue")] HRESULT set1Value([in] int index, [in] X3DSFVec2f *value);
+		[id(13), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out, retval] X3DSFVec2f **value);
+	};
+	[
+		object,
+		uuid(42B550D1-A010-4DA8-9538-ECD651B35F02),
+		dual,
+		helpstring("X3DMFVec3f Interface"),
+		pointer_default(unique)
+	]
+	interface X3DMFVec3f : X3DMField
+	{
+		[id(10), helpstring("method getValue")] HRESULT getValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(11), helpstring("method setValue")] HRESULT setValue([in] int cnt, [in, out, size_is(cnt)] float *value);
+		[id(12), helpstring("method setValue")] HRESULT set1Value([in] int index, [in] X3DSFVec3f *value);
+		[id(13), helpstring("method get1Value")] HRESULT get1Value([in] int index, [out, retval] X3DSFVec3f **value);
+	};
+	[
+		object,
+		uuid(2B0EB163-01B0-42A9-9979-F5E969306D32),
+		dual,
+		helpstring("X3DSFDouble Interface"),
+		pointer_default(unique)
+	]
+	interface X3DSFDouble : X3DField
+	{
+		[id(8), helpstring("method getValue")] HRESULT getValue([in,out] double *value);
+		[id(9), helpstring("method setValue")] HRESULT setValue([in] double value);
+	};
+	[
+		object,
+		uuid(47DEE776-2909-45E7-BDBB-7E9EC092A290),
+		dual,
+		helpstring("IFluxPlayer Interface"),
+		pointer_default(unique)
+	]
+	interface IFluxPlayer : IDispatch
+	{
+		[id(DISPID_ABOUTBOX), helpstring("method AboutBox")] HRESULT AboutBox();
+		[propget, id(1), helpstring("property src")] HRESULT src([out, retval] BSTR *pVal);
+		[propput, id(1), helpstring("property src")] HRESULT src([in] BSTR newVal);
+		[id(2), helpstring("method setFluxControl")] HRESULT setFluxControl(void *pFluxCtrl);
+	};
+	[
+		object,
+		uuid(4B456961-5D8C-4E07-8131-848A23753E04),
+		dual,
+		helpstring("X3DExecutionContext Interface"),
+		pointer_default(unique)
+	]
+	interface X3DExecutionContext : IDispatch
+	{
+		[id(1), helpstring("method setClosure")] HRESULT setClosure([in] void *closure);
+		[id(2), helpstring("method getClosure")] HRESULT getClosure([in] void **closure);
+		[id(3), helpstring("method getSpecificationVersion")] HRESULT getSpecificationVersion([out, retval] BSTR *value);
+		[id(4), helpstring("method getEncoding")] HRESULT getEncoding([out, retval] X3DEncodingType *encodingType);
+		[id(5), helpstring("method getNode")] HRESULT getNode([in] BSTR name, [out, retval] X3DNode **value);
+		[id(6), helpstring("method createNode")] HRESULT createNode(BSTR type, [out, retval] X3DNode **node);
+		[id(7), helpstring("method addRoute")] HRESULT addRoute([in] X3DNode * fromNode, [in] BSTR fromEventOut, [in] X3DNode *toNode, 
+			[in] BSTR toEventIn, [out,retval] X3DRoute **ppRoute);
+		[id(8), helpstring("method deleteRoute")] HRESULT deleteRoute([in] X3DRoute *pRoute);
+		[id(9), helpstring("method getRootNodes")] HRESULT getRootNodes([out,retval] X3DNodeArray **rootnodes);
+		[id(10), helpstring("method getProtoDeclarations")] HRESULT getProtoDeclarations([out,retval] X3DProtoDeclarationArray **protodeclarations);
+
+	};
+	[
+		object,
+		uuid(006FBCDF-28E2-4F47-A2F4-F493AD909844),
+		dual,
+		helpstring("X3DScene Interface"),
+		pointer_default(unique)
+	]
+	interface X3DScene : X3DExecutionContext
+	{
+		[id(11), helpstring("method getMetaData")] HRESULT getMetaData([in] BSTR key, [out, retval] BSTR *value);
+		[id(12), helpstring("method setMetaData")] HRESULT setMetaData([in] BSTR key, [in] BSTR value);
+		[id(13), helpstring("method addRootNode")] HRESULT addRootNode([in] X3DNode *node);
+		[id(14), helpstring("method removeRootNode")] HRESULT removeRootNode([in] X3DNode *node);
+	};
+	[
+		object,
+		uuid(7E147096-E5B6-4C6C-A610-256DE53B92EC),
+		dual,
+		helpstring("X3DBrowserListener Interface"),
+		pointer_default(unique)
+	]
+	interface X3DBrowserListener : IDispatch
+	{
+		[id(1), helpstring("method browserChanged")] HRESULT browserChanged([in] X3DBrowserEvent event);
+	};
+	[
+		object,
+		uuid(62357248-742F-4BC6-84BF-BF622D5EAD02),
+		dual,
+		helpstring("X3DExternalBrowser Interface"),
+		pointer_default(unique)
+	]
+	interface X3DExternalBrowser : X3DBrowser
+	{
+		[id(23), helpstring("method beginUpdate")] HRESULT beginUpdate();
+		[id(24), helpstring("method endUpdate")] HRESULT endUpdate();
+	};
+	[
+		object,
+		uuid(2EE4BBCA-E98E-407D-8E37-90EB2FE2E856),
+		dual,
+		helpstring("X3DFieldEventListener Interface"),
+		pointer_default(unique)
+	]
+	interface X3DFieldEventListener : IDispatch
+	{
+		[id(1), helpstring("method browserChanged")] HRESULT readableFieldChanged([in] X3DField *pField, double timestamp);
+	};
+	[
+		object,
+		uuid(8ACA7B53-957E-4432-8F40-2D8B105C856C),
+		dual,
+		helpstring("X3DRoute Interface"),
+		pointer_default(unique)
+	]
+	interface X3DRoute : IDispatch
+	{
+		[id(1), helpstring("method setClosure")] HRESULT setClosure([in] void *closure);
+		[id(2), helpstring("method getClosure")] HRESULT getClosure([in] void **closure);
+		[id(3), helpstring("method setContext")] HRESULT setContext([in] X3DExecutionContext *context);
+		[id(4), helpstring("method getContext")] HRESULT getContext([out, retval] X3DExecutionContext **result);
+		[id(5), helpstring("method getSourceNode")] HRESULT getSourceNode([out, retval] X3DNode **pSourceNode);
+		[id(6), helpstring("method getSourceField")] HRESULT getSourceField([out, retval] BSTR *sourcefield);
+		[id(7), helpstring("method getDestinationNode")] HRESULT getDestinationNode([out, retval] X3DNode **pDestinationNode);
+		[id(8), helpstring("method getDestinationField")] HRESULT getDestinationField([out, retval] BSTR *destinationfield);
+	};
+	[
+		object,
+		uuid(B9A89471-6092-439D-A453-D23A80D62616),
+		dual,
+		helpstring("X3DNodeArray Interface"),
+		pointer_default(unique)
+	]
+	interface X3DNodeArray : IDispatch
+	{
+		[id(DISPID_VALUE), helpstring("method Item")] HRESULT Item([in] VARIANT index, [out, retval] VARIANT *pItem);
+		[propget, id(1), helpstring("method Count")] HRESULT Count([out, retval] long *pVal);
+		[propput, id(1), helpstring("method Count")] HRESULT Count([in] long val);
+		[id(2), helpstring("method get1Value")] HRESULT get1Value([in] int index, [in] X3DNode **value);
+		[id(3), helpstring("method set1Value")] HRESULT set1Value([in] int index, [in] X3DNode *value);
+		[propget, id(4), helpstring("property length")] HRESULT length([out, retval] long *pVal);
+		[propput, id(4), helpstring("property length")] HRESULT length([in] long newVal);
+	};
+	[
+		object,
+		uuid(B4665F92-C9C9-41B9-8EEF-A46FBA4E4615),
+		dual,
+		helpstring("X3DFieldDefinition Interface"),
+		pointer_default(unique)
+	]
+	interface X3DFieldDefinition : IDispatch
+	{
+		[propget, id(1), helpstring("property name")] HRESULT name([out, retval] BSTR *pVal);
+		[propput, id(1), helpstring("property name")] HRESULT name([in] BSTR newVal);
+		[propget, id(2), helpstring("property dataType")] HRESULT dataType([out, retval] X3DFieldType *pVal);
+		[propput, id(2), helpstring("property dataType")] HRESULT dataType([in] X3DFieldType newVal);
+		[propget, id(3), helpstring("property accessType")] HRESULT accessType([out, retval] X3DFieldAccess *pVal);
+		[propput, id(3), helpstring("property accessType")] HRESULT accessType([in] X3DFieldAccess newVal);
+	};
+	[
+		object,
+		uuid(49CCCA4A-56E1-42B1-8496-FCE99AAF605B),
+		dual,
+		helpstring("X3DFieldDefinitionArray Interface"),
+		pointer_default(unique)
+	]
+	interface X3DFieldDefinitionArray : IDispatch
+	{
+		[id(DISPID_VALUE), helpstring("method Item")] HRESULT Item([in] VARIANT index, [out, retval] VARIANT *pItem);
+		[propget, id(1), helpstring("method Count")] HRESULT Count([out, retval] long *pVal);
+		[propput, id(1), helpstring("method Count")] HRESULT Count([in] long val);
+		[id(2), helpstring("method get1Value")] HRESULT get1Value([in] int index, [in] X3DFieldDefinition **value);
+		[id(3), helpstring("method set1Value")] HRESULT set1Value(long index, X3DFieldDefinition *value);
+		[propget, id(4), helpstring("property length")] HRESULT length([out, retval] long *pVal);
+		[propput, id(4), helpstring("property length")] HRESULT length([in] long newVal);
+	};
+	[
+		object,
+		uuid(B39E9F96-0CEA-4BA8-B8BE-796DA37A3B45),
+		dual,
+		helpstring("X3DProtoDeclaration Interface"),
+		pointer_default(unique)
+	]
+	interface X3DProtoDeclaration : IDispatch
+	{
+		[propget, id(1), helpstring("property name")] HRESULT name([out, retval] BSTR *pVal);
+		[propget, id(2), helpstring("property isExternProto")] HRESULT isExternProto([out, retval] VARIANT_BOOL *pVal);
+		[propget, id(3), helpstring("property fields")] HRESULT fields([out, retval] X3DFieldDefinitionArray * *pVal);
+		[id(4), helpstring("method setNativeProtoDeclaration-- for internal use only")]
+			HRESULT setNativeProtoDeclaration([in] void *pNativeProtoDeclaration);
+	};
+	[
+		object,
+		uuid(1AACE5AB-5450-4B90-A151-2D87BB5E498F),
+		dual,
+		helpstring("X3DProtoDeclarationArray Interface"),
+		pointer_default(unique)
+	]
+	interface X3DProtoDeclarationArray : IDispatch
+	{
+		[id(DISPID_VALUE), helpstring("method Item")] HRESULT Item([in] VARIANT index, [out, retval] VARIANT *pItem);
+		[propget, id(1), helpstring("method Count")] HRESULT Count([out, retval] long *pVal);
+		[propput, id(1), helpstring("method Count")] HRESULT Count([in] long val);
+		[id(2), helpstring("method get1Value")] HRESULT get1Value([in] int index, [in] X3DProtoDeclaration **value);
+		[id(3), helpstring("method set1Value")] HRESULT set1Value(long index, X3DProtoDeclaration *value);
+		[propget, id(4), helpstring("property length")] HRESULT length([out, retval] long *pVal);
+		[propput, id(4), helpstring("property length")] HRESULT length([in] long newVal);
+	};
+
+	[
+		uuid(8C7DB996-4067-4E0B-831A-380D1C3B22B0),
+		helpstring("X3DSFTime Class")
+	]
+	coclass CoX3DSFTime
+	{
+		[default] interface X3DSFTime;
+		[default, source] dispinterface _X3DSFTimeEvents;
+	};
+	[
+		uuid(5DCC9CD7-5A07-4E96-9406-8F08FCE28F1B),
+		helpstring("X3DEventOutObserver Class")
+	]
+	coclass CoX3DEventOutObserver
+	{
+		[default] interface X3DEventOutObserver;
+	};
+	[
+		uuid(288B5BD0-18B5-4DC0-A43A-9FF0BDF10FD8),
+		helpstring("X3DSFColor Class")
+	]
+	coclass CoX3DSFColor
+	{
+		[default] interface X3DSFColor;
+	};
+	[
+		uuid(9A6FF18F-2F67-4D38-930C-57417472BD9B),
+		helpstring("X3DSFFloat Class")
+	]
+	coclass CoX3DSFFloat
+	{
+		[default] interface X3DSFFloat;
+	};
+	[
+		uuid(682C3B9D-7462-4583-9AC7-1B8426EF7FC6),
+		helpstring("X3DSFInt32 Class")
+	]
+	coclass CoX3DSFInt32
+	{
+		[default] interface X3DSFInt32;
+	};
+	[
+		uuid(31812207-62D7-42C0-96C1-A2CAF2FB89F6),
+		helpstring("X3DSFNode Class")
+	]
+	coclass CoX3DSFNode
+	{
+		[default] interface X3DSFNode;
+	};
+	[
+		uuid(6FE68A4E-CDA6-4F66-BCF0-1532DE56CE89),
+		helpstring("X3DSFRotation Class")
+	]
+	coclass CoX3DSFRotation
+	{
+		[default] interface X3DSFRotation;
+	};
+	[
+		uuid(84DBDFA8-9F78-44DB-AB52-66C60022B521),
+		helpstring("X3DSFString Class")
+	]
+	coclass CoX3DSFString
+	{
+		[default] interface X3DSFString;
+	};
+	[
+		uuid(56C77CB8-F7AC-47EA-83EF-A10E54F77747),
+		helpstring("X3DSFVec2f Class")
+	]
+	coclass CoX3DSFVec2f
+	{
+		[default] interface X3DSFVec2f;
+	};
+	[
+		uuid(8A40D936-57A8-4991-AAD8-BFCCB0877E9C),
+		helpstring("X3DSFVec3f Class")
+	]
+	coclass CoX3DSFVec3f
+	{
+		[default] interface X3DSFVec3f;
+	};
+	[
+		uuid(71979F5B-1E40-495A-ADA9-D351F014B37B),
+		helpstring("X3DMFFloat Class")
+	]
+	coclass CoX3DMFFloat
+	{
+		[default] interface X3DMFFloat;
+	};
+	[
+		uuid(90A72B6D-6161-4030-A491-76F3168A3E86),
+		helpstring("X3DMFInt32 Class")
+	]
+	coclass CoX3DMFInt32
+	{
+		[default] interface X3DMFInt32;
+	};
+	[
+		uuid(7AA35B65-2B21-4996-8C4B-F86871A8F7A4),
+		helpstring("X3DMFRotation Class")
+	]
+	coclass CoX3DMFRotation
+	{
+		[default] interface X3DMFRotation;
+	};
+	[
+		uuid(11916947-30F6-4B01-B071-C7F9C99C6628),
+		helpstring("X3DMFString Class")
+	]
+	coclass CoX3DMFString
+	{
+		[default] interface X3DMFString;
+	};
+	[
+		uuid(0ACB238B-5F48-4CF9-953D-223B91311E00),
+		helpstring("X3DMFVec2f Class")
+	]
+	coclass CoX3DMFVec2f
+	{
+		[default] interface X3DMFVec2f;
+	};
+	[
+		uuid(99C98869-477E-4EDD-A5DB-760797484E22),
+		helpstring("X3DMFVec3f Class")
+	]
+	coclass CoX3DMFVec3f
+	{
+		[default] interface X3DMFVec3f;
+	};
+	[
+		uuid(435362C0-FE67-4FF2-B2CB-0809349956C5),
+		helpstring("X3DSFDouble Class")
+	]
+	coclass CoX3DSFDouble
+	{
+		[default] interface X3DSFDouble;
+	};
+	[
+		uuid(45ADF2D9-B311-4758-9220-F8D6D582D2D7),
+		helpstring("FluxPlayer Class")
+	]
+	coclass FluxPlayer
+	{
+		[default] interface IFluxPlayer;
+	};
+	[
+		uuid(563E697A-6954-422B-A82D-D61568522765),
+		helpstring("X3DExecutionContext Class")
+	]
+	coclass CoX3DExecutionContext
+	{
+		[default] interface X3DExecutionContext;
+	};
+	[
+		uuid(03B74F4E-8BE5-453E-A870-92E1A3066B1F),
+		helpstring("X3DScene Class")
+	]
+	coclass CoX3DScene
+	{
+		[default] interface X3DScene;
+	};
+	[
+		uuid(AF56D457-7DF6-4F5D-95E9-72CCC8F8A792),
+		helpstring("X3DBrowserListener Class")
+	]
+	coclass CoX3DBrowserListener
+	{
+		[default] interface X3DBrowserListener;
+	};
+	[
+		uuid(6A04E913-B549-4F17-98AE-8808D7C36E30),
+		helpstring("X3DExternalBrowser Class")
+	]
+	coclass CoX3DExternalBrowser
+	{
+		[default] interface X3DExternalBrowser;
+	};
+	[
+		uuid(DAB90B62-3B19-47ED-AC2D-F71063DAF907),
+		helpstring("X3DFieldEventListener Class")
+	]
+	coclass CoX3DFieldEventListener
+	{
+		[default] interface X3DFieldEventListener;
+	};
+	[
+		uuid(EE3BDCFD-4156-4D11-8227-F8BE60213837),
+		helpstring("X3DRoute Class")
+	]
+	coclass CoX3DRoute
+	{
+		[default] interface X3DRoute;
+	};
+	[
+		uuid(57C5C0F8-555E-4111-AA96-F9F747256B46),
+		helpstring("X3DNodeArray Class")
+	]
+	coclass CoX3DNodeArray
+	{
+		[default] interface X3DNodeArray;
+	};
+	[
+		uuid(61C1DA98-3B82-41F8-8327-6002920D2697),
+		helpstring("X3DFieldDefinition Class")
+	]
+	coclass CoX3DFieldDefinition
+	{
+		[default] interface X3DFieldDefinition;
+	};
+	[
+		uuid(7C1F3AF8-C47D-4D55-9F25-64B9972C1126),
+		helpstring("X3DFieldDefinitionArray Class")
+	]
+	coclass CoX3DFieldDefinitionArray
+	{
+		[default] interface X3DFieldDefinitionArray;
+	};
+	[
+		uuid(A8866F8B-7974-4109-A0E3-F1023F6C4BFA),
+		helpstring("X3DProtoDeclaration Class")
+	]
+	coclass CoX3DProtoDeclaration
+	{
+		[default] interface X3DProtoDeclaration;
+	};
+	[
+		uuid(6EFD51B3-C0D4-4B54-B3E1-66DCA59404E9),
+		helpstring("X3DProtoDeclarationArray Class")
+	]
+	coclass CoX3DProtoDeclarationArray
+	{
+		[default] interface X3DProtoDeclarationArray;
+	};
+};

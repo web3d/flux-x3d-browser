@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: math3D - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\WINDOWS\TEMP\RSP3252.TMP" with contents
+[
+/nologo /MLd /W2 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/math3D.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\bookCode\Chapter 06\math3D\BspTree.cpp"
+]
+Creating command line "cl.exe @D:\WINDOWS\TEMP\RSP3252.TMP" 
+Creating command line "link.exe -lib /nologo /out:"..\lib\math3D.lib"  ".\Debug\BspTree.obj" ".\Debug\color3.obj" ".\Debug\color4.obj" ".\Debug\matrix4.obj" ".\Debug\plane3.obj" ".\Debug\point3.obj" ".\Debug\quat.obj" "
+<h3>Output Window</h3>
+Compiling...
+BspTree.cpp
+Creating library...
+
+
+
+<h3>Results</h3>
+math3D.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

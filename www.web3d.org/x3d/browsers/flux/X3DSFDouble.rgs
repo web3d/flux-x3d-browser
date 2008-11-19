@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DSFDouble.1 = s 'X3DSFDouble Class'
+	{
+		CLSID = s '{435362C0-FE67-4FF2-B2CB-0809349956C5}'
+	}
+	Anima.X3DSFDouble = s 'X3DSFDouble Class'
+	{
+		CLSID = s '{435362C0-FE67-4FF2-B2CB-0809349956C5}'
+		CurVer = s 'Anima.X3DSFDouble.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {435362C0-FE67-4FF2-B2CB-0809349956C5} = s 'X3DSFDouble Class'
+		{
+			ProgID = s 'Anima.X3DSFDouble.1'
+			VersionIndependentProgID = s 'Anima.X3DSFDouble'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

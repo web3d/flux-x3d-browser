@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DMFString.1 = s 'X3DMFString Class'
+	{
+		CLSID = s '{11916947-30F6-4B01-B071-C7F9C99C6628}'
+	}
+	Anima.X3DMFString = s 'X3DMFString Class'
+	{
+		CLSID = s '{11916947-30F6-4B01-B071-C7F9C99C6628}'
+		CurVer = s 'Anima.X3DMFString.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {11916947-30F6-4B01-B071-C7F9C99C6628} = s 'X3DMFString Class'
+		{
+			ProgID = s 'Anima.X3DMFString.1'
+			VersionIndependentProgID = s 'Anima.X3DMFString'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

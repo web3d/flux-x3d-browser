@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"   "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Immersive">
+<Scene>
+<!--
+	<Shape> <Appearance><Material diffuseColor='0 0 1'/></Appearance><Box/></Shape>
+-->
+	<Layer2D
+	>
+	<Layout
+		size='400 800'
+		align='"CENTER","CENTER"'
+		sizeUnits ='"PIXELS", "PIXELS"'
+		scaleMode = '"PIXEL" "PIXEL"'
+	/>
+		<NavigationInfo headlight='true'/>
+		<Transform translation='0 0 -.001' scale='1 1 1'>
+		<Shape>
+			<Appearance>
+				<Material diffuseColor = '0 0 0' emissiveColor='1 1 1' transparency='0'/>
+			</Appearance>
+			<IndexedFaceSet coordIndex='0 1 2 0 2 3' texCoordIndex='0, 1, 2, 0, 2, 3'>
+				<Coordinate point='-128 -96 0, 128 -96 0, 128 64 0, -128 64 0'/> 
+				<TextureCoordinate point='0 0, 1 0, 1 1, 0 1'/>
+			</IndexedFaceSet>
+
+		</Shape>
+		</Transform>
+		<Shape>
+			<Appearance>
+				<Material diffuseColor = '0 0 0' emissiveColor='1 1 1'/>
+				<ImageTexture url="'fluxloaderlogo1.png'"/>
+			</Appearance>
+			<IndexedFaceSet coordIndex='0 1 2 0 2 3' texCoordIndex='0, 1, 2, 0, 2, 3'>
+				<Coordinate point='-128 -64 0, 128 -64 0, 128 64 0, -128 64 0'/> 
+				<TextureCoordinate point='0 0, 1 0, 1 1, 0 1'/>
+			</IndexedFaceSet>
+
+		</Shape>
+		<Transform DEF="LoaderBar" translation='0 -64 0' scale='1 1 1'>
+		<Shape>
+			<Appearance>
+				<Material diffuseColor = '0 0 0' emissiveColor='1 1 1'/>
+				<ImageTexture url="'fluxloaderbar1.png'"/>
+			</Appearance>
+			<IndexedFaceSet coordIndex='0 1 2 0 2 3' texCoordIndex='0, 1, 2, 0, 2, 3'>
+				<Coordinate point='-64 -16 0, 64 -16 0, 64 0 0, -64 0 0'/> 
+				<TextureCoordinate point='0 0, 1 0, 1 1, 0 1'/>
+			</IndexedFaceSet>
+		</Shape>
+		</Transform>
+	</Layer2D>
+
+
+<ProximitySensor DEF="WorldLoadSensor" size="10000 10000 10000"/>
+<TimeSensor DEF="AnimateTimer" loop='true' cycleInterval='10' stopTime='1'/>
+<ROUTE fromNode="WorldLoadSensor" fromField="enterTime" toNode="AnimateTimer" toField="set_startTime"/>
+
+<PositionInterpolator DEF="AnimateScaleInterp" key="0 1" keyValue="0 1 1 1 1 1"/>
+<PositionInterpolator DEF="AnimatePosInterp" key="0 1" keyValue="-64 -64 0 0 -64 0"/>
+<ROUTE fromNode="AnimateTimer" fromField="fraction_changed" toNode="AnimateScaleInterp" toField="set_fraction"/>
+<ROUTE fromNode="AnimateScaleInterp" fromField="value_changed" toNode="LoaderBar" toField="set_scale"/>
+<ROUTE fromNode="AnimateTimer" fromField="fraction_changed" toNode="AnimatePosInterp" toField="set_fraction"/>
+<ROUTE fromNode="AnimatePosInterp" fromField="value_changed" toNode="LoaderBar" toField="set_translation"/>
+
+  </Scene>
+
+</X3D>

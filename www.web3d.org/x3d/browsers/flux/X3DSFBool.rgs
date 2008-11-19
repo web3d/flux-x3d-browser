@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DSFBool.1 = s 'X3DSFBool Class'
+	{
+		CLSID = s '{4F65CFBC-E8C1-4835-B2DB-4A59628FFBC2}'
+	}
+	Anima.X3DSFBool = s 'X3DSFBool Class'
+	{
+		CLSID = s '{4F65CFBC-E8C1-4835-B2DB-4A59628FFBC2}'
+		CurVer = s 'Anima.X3DSFBool.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4F65CFBC-E8C1-4835-B2DB-4A59628FFBC2} = s 'X3DSFBool Class'
+		{
+			ProgID = s 'Anima.X3DSFBool.1'
+			VersionIndependentProgID = s 'Anima.X3DSFBool'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}
