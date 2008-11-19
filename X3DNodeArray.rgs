@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DNodeArray.1 = s 'X3DNodeArray Class'
+	{
+		CLSID = s '{57C5C0F8-555E-4111-AA96-F9F747256B46}'
+	}
+	Anima.X3DNodeArray = s 'X3DNodeArray Class'
+	{
+		CLSID = s '{57C5C0F8-555E-4111-AA96-F9F747256B46}'
+		CurVer = s 'Anima.X3DNodeArray.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {57C5C0F8-555E-4111-AA96-F9F747256B46} = s 'X3DNodeArray Class'
+		{
+			ProgID = s 'Anima.X3DNodeArray.1'
+			VersionIndependentProgID = s 'Anima.X3DNodeArray'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

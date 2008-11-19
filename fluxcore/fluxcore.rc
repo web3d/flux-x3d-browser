@@ -1,0 +1,250 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\fluxcore.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,634
+ PRODUCTVERSION 2,0,0,634
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "fluxcore DLL\0"
+            VALUE "FileVersion", "2, 0, 0, 634\0"
+            VALUE "InternalName", "fluxcore\0"
+            VALUE "LegalCopyright", "Copyright © 2001-2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "fluxcore.DLL\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "fluxcore Dynamic Link Library\0"
+            VALUE "ProductVersion", "2, 0, 0, 634\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CYLINDERSENSOR      CURSOR  DISCARDABLE     "cur00001.cur"
+IDC_HANDCURSOR          CURSOR  DISCARDABLE     "HAND-M.cur"
+IDC_PLANESENSOR         CURSOR  DISCARDABLE     "cursor1.cur"
+IDC_SEEKCURSOR          CURSOR  DISCARDABLE     "seek.cur"
+IDC_SPHERESENSOR        CURSOR  DISCARDABLE     "spheresensor.cur"
+IDC_TOUCHSENSOR         CURSOR  DISCARDABLE     "touchsen.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_CTXMENU MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Walk\tCtrl-W",               IDR_CTXWALK, CHECKED
+        MENUITEM "&Fly\tCtrl-F",                IDR_CTXFLY
+        MENUITEM "&Examine\tCtrl-E",            IDR_CTXEXAMINE
+        MENUITEM SEPARATOR
+        MENUITEM "See&k\tCtrl-K",               IDR_CTXSEEK
+        MENUITEM "&Level\tCtrl-L",              IDR_CTXLEVEL, GRAYED
+        MENUITEM "&Back\tCtrl-B",               IDR_CTXBACK
+        MENUITEM "&Forward\tCtrl-O",            IDR_CTXFORWARD
+        MENUITEM SEPARATOR
+        POPUP "&Views"
+        BEGIN
+            MENUITEM "&First\tHome",                IDR_CTXVIEWFIRST
+            MENUITEM "&Last\tEnd",                  IDR_CTXVIEWLAST
+            MENUITEM "&Next\tPageDn",               IDR_CTXVIEWNEXT
+            MENUITEM "&Previous\tPageUp",           IDR_CTXVIEWPREVIOUS
+            MENUITEM "&Restore\tCtrl-R",            IDR_CTXVIEWRESTORE
+            MENUITEM SEPARATOR
+        END
+        POPUP "&Speed"
+        BEGIN
+            MENUITEM "&Slower\tCtrl-1",             IDR_CTXSPEEDSLOWER
+            MENUITEM "S&low\tCtrl-2",               IDR_CTXSPEEDSLOW
+            MENUITEM "&Medium\tCtrl-3",             IDR_CTXSPEEDMEDIUM
+            MENUITEM "&Fast\tCtrl-4",               IDR_CTXSPEEDFAST
+            MENUITEM "F&aster\tCtrl-5",             IDR_CTXSPEEDFASTER
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Info Center\tCtrl-I",        IDR_CTXINFOCENTER
+        MENUITEM "P&references\tCtrl-R",        IDR_CTXPREFERENCES, GRAYED
+        POPUP "&Help"
+        BEGIN
+            MENUITEM "&User Guide",                 IDR_CTXHELPUSERSGUIDE
+            MENUITEM "&About Flux Player",          IDR_CTXHELPABOUT
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_ANIMA DIALOG DISCARDABLE  34, 22, 274, 79
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "About Flux"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Flux Player, Version 2.0",IDC_STATIC,11,10,170,8
+    LTEXT           "Copyright © 2001-2007 by Media Machines",IDC_STATIC,27,
+                    38,170,8
+    PUSHBUTTON      "OK",IDOK,235,7,32,14,BS_FLAT | WS_GROUP
+    LTEXT           "Image decoders based on the work of the Independent JPEG Group",
+                    IDC_STATIC,27,48,227,8
+    LTEXT           "Portions of math libraries copyright (c) 2000 Adrian Perez and Dan Royer",
+                    IDC_STATIC,27,58,231,8
+    LTEXT           "Build 634    20-Feb-2007",IDC_STATIC,11,21,170,8
+END
+
+IDD_CONSOLE DIALOG DISCARDABLE  0, 0, 424, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Flux Console"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_CONSOLETEXT,7,7,410,145,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_VSCROLL | WS_HSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX_ANIMA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+HTML_LOCALUSERGUIDE     HTML    DISCARDABLE     "Debug\\localuserguide.html"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\fluxcore.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DProtoDeclarationArray.1 = s 'X3DProtoDeclarationArray Class'
+	{
+		CLSID = s '{6EFD51B3-C0D4-4B54-B3E1-66DCA59404E9}'
+	}
+	Anima.X3DProtoDeclarationArray = s 'X3DProtoDeclarationArray Class'
+	{
+		CLSID = s '{6EFD51B3-C0D4-4B54-B3E1-66DCA59404E9}'
+		CurVer = s 'Anima.X3DProtoDeclarationArray.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6EFD51B3-C0D4-4B54-B3E1-66DCA59404E9} = s 'X3DProtoDeclarationArray Class'
+		{
+			ProgID = s 'Anima.X3DProtoDeclarationArray.1'
+			VersionIndependentProgID = s 'Anima.X3DProtoDeclarationArray'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

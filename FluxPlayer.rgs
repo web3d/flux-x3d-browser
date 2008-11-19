@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.FluxPlayer.1 = s 'FluxPlayer Class'
+	{
+		CLSID = s '{45ADF2D9-B311-4758-9220-F8D6D582D2D7}'
+	}
+	Anima.FluxPlayer = s 'FluxPlayer Class'
+	{
+		CLSID = s '{45ADF2D9-B311-4758-9220-F8D6D582D2D7}'
+		CurVer = s 'Anima.FluxPlayer.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {45ADF2D9-B311-4758-9220-F8D6D582D2D7} = s 'FluxPlayer Class'
+		{
+			ProgID = s 'Anima.FluxPlayer.1'
+			VersionIndependentProgID = s 'Anima.FluxPlayer'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

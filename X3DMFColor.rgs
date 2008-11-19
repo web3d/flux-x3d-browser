@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DMFColor.1 = s 'X3DMFColor Class'
+	{
+		CLSID = s '{7E36E664-91FD-4702-B427-6D8083A75F05}'
+	}
+	Anima.X3DMFColor = s 'X3DMFColor Class'
+	{
+		CLSID = s '{7E36E664-91FD-4702-B427-6D8083A75F05}'
+		CurVer = s 'Anima.X3DMFColor.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {7E36E664-91FD-4702-B427-6D8083A75F05} = s 'X3DMFColor Class'
+		{
+			ProgID = s 'Anima.X3DMFColor.1'
+			VersionIndependentProgID = s 'Anima.X3DMFColor'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

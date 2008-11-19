@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DMFRotation.1 = s 'X3DMFRotation Class'
+	{
+		CLSID = s '{7AA35B65-2B21-4996-8C4B-F86871A8F7A4}'
+	}
+	Anima.X3DMFRotation = s 'X3DMFRotation Class'
+	{
+		CLSID = s '{7AA35B65-2B21-4996-8C4B-F86871A8F7A4}'
+		CurVer = s 'Anima.X3DMFRotation.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {7AA35B65-2B21-4996-8C4B-F86871A8F7A4} = s 'X3DMFRotation Class'
+		{
+			ProgID = s 'Anima.X3DMFRotation.1'
+			VersionIndependentProgID = s 'Anima.X3DMFRotation'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

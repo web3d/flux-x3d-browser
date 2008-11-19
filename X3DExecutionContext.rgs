@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DExecutionContext.1 = s 'X3DExecutionContext Class'
+	{
+		CLSID = s '{563E697A-6954-422B-A82D-D61568522765}'
+	}
+	Anima.X3DExecutionContext = s 'X3DExecutionContext Class'
+	{
+		CLSID = s '{563E697A-6954-422B-A82D-D61568522765}'
+		CurVer = s 'Anima.X3DExecutionContext.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {563E697A-6954-422B-A82D-D61568522765} = s 'X3DExecutionContext Class'
+		{
+			ProgID = s 'Anima.X3DExecutionContext.1'
+			VersionIndependentProgID = s 'Anima.X3DExecutionContext'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

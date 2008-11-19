@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DSFVec2f.1 = s 'X3DSFVec2f Class'
+	{
+		CLSID = s '{56C77CB8-F7AC-47EA-83EF-A10E54F77747}'
+	}
+	Anima.X3DSFVec2f = s 'X3DSFVec2f Class'
+	{
+		CLSID = s '{56C77CB8-F7AC-47EA-83EF-A10E54F77747}'
+		CurVer = s 'Anima.X3DSFVec2f.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {56C77CB8-F7AC-47EA-83EF-A10E54F77747} = s 'X3DSFVec2f Class'
+		{
+			ProgID = s 'Anima.X3DSFVec2f.1'
+			VersionIndependentProgID = s 'Anima.X3DSFVec2f'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

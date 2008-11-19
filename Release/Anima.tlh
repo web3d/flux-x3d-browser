@@ -1,0 +1,1242 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8168.0 (2e55bddf).
+//
+// c:\fluxsrc\flux\release\Anima.tlh
+//
+// C++ source equivalent of Win32 type library C:\Program Files\Media Machines\Flux\Anima.ocx
+// compiler-generated file created 08/08/05 at 17:05:09 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("33a5c345-9c42-430e-a208-3fe942999486"))
+/* dual interface */ X3DNode;
+struct __declspec(uuid("77590c91-073d-428e-8940-7cd14b1897c8"))
+/* dual interface */ X3DField;
+struct __declspec(uuid("4b456961-5d8c-4e07-8131-848a23753e04"))
+/* dual interface */ X3DExecutionContext;
+struct __declspec(uuid("8aca7b53-957e-4432-8f40-2d8b105c856c"))
+/* dual interface */ X3DRoute;
+struct __declspec(uuid("b9a89471-6092-439d-a453-d23a80d62616"))
+/* dual interface */ X3DNodeArray;
+struct __declspec(uuid("49ccca4a-56e1-42b1-8496-fce99aaf605b"))
+/* dual interface */ X3DFieldDefinitionArray;
+struct __declspec(uuid("b4665f92-c9c9-41b9-8eef-a46fba4e4615"))
+/* dual interface */ X3DFieldDefinition;
+struct __declspec(uuid("1ddf9d8d-6931-4b5d-a2f6-8a341a1ad0cf"))
+/* dual interface */ X3DBrowser;
+struct __declspec(uuid("006fbcdf-28e2-4f47-a2f4-f493ad909844"))
+/* dual interface */ X3DScene;
+struct __declspec(uuid("3497632d-0ca7-4ec8-bcda-09564868b9f2"))
+/* dual interface */ X3DEventOutObserver;
+struct __declspec(uuid("7e147096-e5b6-4c6c-a610-256de53b92ec"))
+/* dual interface */ X3DBrowserListener;
+struct __declspec(uuid("2ee4bbca-e98e-407d-8e37-90eb2fe2e856"))
+/* dual interface */ X3DFieldEventListener;
+struct __declspec(uuid("2de0158a-0c8e-4667-820c-074953fb957a"))
+/* dual interface */ X3DSFBool;
+struct __declspec(uuid("c7c5930c-186e-4b78-8040-bd1226828888"))
+/* dual interface */ X3DSFColor;
+struct __declspec(uuid("2d91d7e4-8a06-4626-8a41-6877657d1034"))
+/* dual interface */ X3DSFFloat;
+struct __declspec(uuid("1db18114-e6a1-490e-a4c2-a29201999696"))
+/* dual interface */ X3DSFInt32;
+struct __declspec(uuid("9410f6bf-be28-48f8-97e8-7b040fc8e25c"))
+/* dual interface */ X3DSFNode;
+struct __declspec(uuid("b13c7843-eb3b-4d36-8c77-7c4dd37277f1"))
+/* dual interface */ X3DSFRotation;
+struct __declspec(uuid("ad9e8b1d-84cb-498f-b050-ffd913a5d875"))
+/* dual interface */ X3DSFString;
+struct __declspec(uuid("8152c989-858a-470d-bc61-0532ec81a902"))
+/* dual interface */ X3DSFVec2f;
+struct __declspec(uuid("86771eaa-a5eb-4f9f-82c1-437160dab4a5"))
+/* dual interface */ X3DSFVec3f;
+struct __declspec(uuid("44166b5d-ca84-4dfe-9abb-5b03e72e9c05"))
+/* dispinterface */ _DAnima;
+struct __declspec(uuid("cfb6910f-3849-417e-9217-a8532e7a1380"))
+/* dispinterface */ _DAnimaEvents;
+struct __declspec(uuid("4a564091-9a41-43dc-ae4c-4a1457d5a53e"))
+/* dual interface */ X3DMField;
+struct __declspec(uuid("16662d28-9e70-4161-a2ab-f0c65506df3b"))
+/* dual interface */ X3DMFColor;
+struct __declspec(uuid("041bc54c-f94b-4829-a05e-8e7059423524"))
+/* dual interface */ X3DMFNode;
+struct __declspec(uuid("3172e8a3-97eb-4dd3-866a-3fbc0f6ea457"))
+/* dual interface */ X3DSFTime;
+struct /* coclass */ Anima;
+struct __declspec(uuid("d181aeda-e6cc-4556-8948-23d2c6222531"))
+/* dispinterface */ IDashboard1;
+struct /* coclass */ DASHBOARD;
+struct /* coclass */ CoX3DNode;
+struct /* coclass */ CoX3DField;
+struct /* coclass */ CoX3DBrowser;
+struct /* coclass */ CoX3DSFBool;
+struct /* coclass */ CoX3DMField;
+struct /* coclass */ CoX3DMFColor;
+struct /* coclass */ CoX3DMFNode;
+struct __declspec(uuid("7fce58b1-f0bd-4696-a370-f9ef021fc3d5"))
+/* dispinterface */ _X3DSFTimeEvents;
+struct __declspec(uuid("b4365441-8859-413f-8f16-ea0ad6e98d00"))
+/* dual interface */ X3DMFFloat;
+struct __declspec(uuid("ce3b6fcd-8e08-4191-997a-b25dda640aef"))
+/* dual interface */ X3DMFInt32;
+struct __declspec(uuid("43d3e0ea-68ef-4923-85da-d1d9bef80212"))
+/* dual interface */ X3DMFRotation;
+struct __declspec(uuid("28fa5559-97bc-42cd-8e9a-b921f4b1a8cc"))
+/* dual interface */ X3DMFString;
+struct __declspec(uuid("7c4602a2-f24c-40f0-ba32-92c9aeceb11e"))
+/* dual interface */ X3DMFVec2f;
+struct __declspec(uuid("42b550d1-a010-4da8-9538-ecd651b35f02"))
+/* dual interface */ X3DMFVec3f;
+struct __declspec(uuid("2b0eb163-01b0-42a9-9979-f5e969306d32"))
+/* dual interface */ X3DSFDouble;
+struct __declspec(uuid("47dee776-2909-45e7-bdbb-7e9ec092a290"))
+/* dual interface */ IFluxPlayer;
+struct __declspec(uuid("62357248-742f-4bc6-84bf-bf622d5ead02"))
+/* dual interface */ X3DExternalBrowser;
+struct /* coclass */ CoX3DSFTime;
+struct /* coclass */ CoX3DEventOutObserver;
+struct /* coclass */ CoX3DSFColor;
+struct /* coclass */ CoX3DSFFloat;
+struct /* coclass */ CoX3DSFInt32;
+struct /* coclass */ CoX3DSFNode;
+struct /* coclass */ CoX3DSFRotation;
+struct /* coclass */ CoX3DSFString;
+struct /* coclass */ CoX3DSFVec2f;
+struct /* coclass */ CoX3DSFVec3f;
+struct /* coclass */ CoX3DMFFloat;
+struct /* coclass */ CoX3DMFInt32;
+struct /* coclass */ CoX3DMFRotation;
+struct /* coclass */ CoX3DMFString;
+struct /* coclass */ CoX3DMFVec2f;
+struct /* coclass */ CoX3DMFVec3f;
+struct /* coclass */ CoX3DSFDouble;
+struct /* coclass */ FluxPlayer;
+struct /* coclass */ CoX3DExecutionContext;
+struct /* coclass */ CoX3DScene;
+struct /* coclass */ CoX3DBrowserListener;
+struct /* coclass */ CoX3DExternalBrowser;
+struct /* coclass */ CoX3DFieldEventListener;
+struct /* coclass */ CoX3DRoute;
+struct /* coclass */ CoX3DNodeArray;
+struct /* coclass */ CoX3DFieldDefinition;
+struct /* coclass */ CoX3DFieldDefinitionArray;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(X3DNode, __uuidof(X3DNode));
+_COM_SMARTPTR_TYPEDEF(X3DField, __uuidof(X3DField));
+_COM_SMARTPTR_TYPEDEF(X3DExecutionContext, __uuidof(X3DExecutionContext));
+_COM_SMARTPTR_TYPEDEF(X3DRoute, __uuidof(X3DRoute));
+_COM_SMARTPTR_TYPEDEF(X3DNodeArray, __uuidof(X3DNodeArray));
+_COM_SMARTPTR_TYPEDEF(X3DFieldDefinitionArray, __uuidof(X3DFieldDefinitionArray));
+_COM_SMARTPTR_TYPEDEF(X3DFieldDefinition, __uuidof(X3DFieldDefinition));
+_COM_SMARTPTR_TYPEDEF(X3DBrowser, __uuidof(X3DBrowser));
+_COM_SMARTPTR_TYPEDEF(X3DScene, __uuidof(X3DScene));
+_COM_SMARTPTR_TYPEDEF(X3DEventOutObserver, __uuidof(X3DEventOutObserver));
+_COM_SMARTPTR_TYPEDEF(X3DBrowserListener, __uuidof(X3DBrowserListener));
+_COM_SMARTPTR_TYPEDEF(X3DFieldEventListener, __uuidof(X3DFieldEventListener));
+_COM_SMARTPTR_TYPEDEF(X3DSFBool, __uuidof(X3DSFBool));
+_COM_SMARTPTR_TYPEDEF(X3DSFColor, __uuidof(X3DSFColor));
+_COM_SMARTPTR_TYPEDEF(X3DSFFloat, __uuidof(X3DSFFloat));
+_COM_SMARTPTR_TYPEDEF(X3DSFInt32, __uuidof(X3DSFInt32));
+_COM_SMARTPTR_TYPEDEF(X3DSFNode, __uuidof(X3DSFNode));
+_COM_SMARTPTR_TYPEDEF(X3DSFRotation, __uuidof(X3DSFRotation));
+_COM_SMARTPTR_TYPEDEF(X3DSFString, __uuidof(X3DSFString));
+_COM_SMARTPTR_TYPEDEF(X3DSFVec2f, __uuidof(X3DSFVec2f));
+_COM_SMARTPTR_TYPEDEF(X3DSFVec3f, __uuidof(X3DSFVec3f));
+_COM_SMARTPTR_TYPEDEF(_DAnima, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(_DAnimaEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(X3DMField, __uuidof(X3DMField));
+_COM_SMARTPTR_TYPEDEF(X3DMFColor, __uuidof(X3DMFColor));
+_COM_SMARTPTR_TYPEDEF(X3DMFNode, __uuidof(X3DMFNode));
+_COM_SMARTPTR_TYPEDEF(X3DSFTime, __uuidof(X3DSFTime));
+_COM_SMARTPTR_TYPEDEF(IDashboard1, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(_X3DSFTimeEvents, __uuidof(IDispatch));
+_COM_SMARTPTR_TYPEDEF(X3DMFFloat, __uuidof(X3DMFFloat));
+_COM_SMARTPTR_TYPEDEF(X3DMFInt32, __uuidof(X3DMFInt32));
+_COM_SMARTPTR_TYPEDEF(X3DMFRotation, __uuidof(X3DMFRotation));
+_COM_SMARTPTR_TYPEDEF(X3DMFString, __uuidof(X3DMFString));
+_COM_SMARTPTR_TYPEDEF(X3DMFVec2f, __uuidof(X3DMFVec2f));
+_COM_SMARTPTR_TYPEDEF(X3DMFVec3f, __uuidof(X3DMFVec3f));
+_COM_SMARTPTR_TYPEDEF(X3DSFDouble, __uuidof(X3DSFDouble));
+_COM_SMARTPTR_TYPEDEF(IFluxPlayer, __uuidof(IFluxPlayer));
+_COM_SMARTPTR_TYPEDEF(X3DExternalBrowser, __uuidof(X3DExternalBrowser));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("33a5c345-9c42-430e-a208-3fe942999486"))
+X3DNode : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall setNativeNode (
+        void * pNativeNode ) = 0;
+    virtual HRESULT __stdcall getNativeNode (
+        void * ppNativeNode ) = 0;
+    virtual HRESULT __stdcall getTypeName (
+        BSTR * typenm ) = 0;
+    virtual HRESULT __stdcall getField (
+        BSTR name,
+        struct X3DField * * result ) = 0;
+    virtual HRESULT __stdcall setContext (
+        struct X3DExecutionContext * context ) = 0;
+    virtual HRESULT __stdcall getContext (
+        struct X3DExecutionContext * * result ) = 0;
+    virtual HRESULT __stdcall getName (
+        BSTR * name ) = 0;
+    virtual HRESULT __stdcall getNumFields (
+        int * result ) = 0;
+    virtual HRESULT __stdcall getFieldInfo (
+        int fieldIndex,
+        enum X3DFieldAccess * accesstype,
+        enum X3DFieldType * fieldtype,
+        BSTR * fieldName ) = 0;
+    virtual HRESULT __stdcall get_Text (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall getFieldDefinitions (
+        struct X3DFieldDefinitionArray * * fieldDefinitions ) = 0;
+};
+
+struct __declspec(uuid("77590c91-073d-428e-8940-7cd14b1897c8"))
+X3DField : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall attach (
+        struct X3DExecutionContext * context,
+        void * pNode,
+        void * pField,
+        void * mid,
+        long valueType ) = 0;
+    virtual HRESULT __stdcall addFieldEventListener (
+        IDispatch * listener ) = 0;
+    virtual HRESULT __stdcall removeFieldEventListener (
+        IDispatch * listener ) = 0;
+    virtual HRESULT __stdcall getAccessType (
+        enum X3DFieldAccess * accesstype ) = 0;
+    virtual HRESULT __stdcall getType (
+        enum X3DFieldType * fieldtype ) = 0;
+    virtual HRESULT __stdcall getName (
+        BSTR * name ) = 0;
+    virtual HRESULT __stdcall dispose ( ) = 0;
+};
+
+struct __declspec(uuid("4b456961-5d8c-4e07-8131-848a23753e04"))
+X3DExecutionContext : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall setClosure (
+        void * closure ) = 0;
+    virtual HRESULT __stdcall getClosure (
+        void * * closure ) = 0;
+    virtual HRESULT __stdcall getSpecificationVersion (
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall getEncoding (
+        enum X3DEncodingType * encodingType ) = 0;
+    virtual HRESULT __stdcall getNode (
+        BSTR name,
+        struct X3DNode * * value ) = 0;
+    virtual HRESULT __stdcall createNode (
+        BSTR type,
+        struct X3DNode * * node ) = 0;
+    virtual HRESULT __stdcall addRoute (
+        struct X3DNode * fromNode,
+        BSTR fromEventOut,
+        struct X3DNode * toNode,
+        BSTR toEventIn,
+        struct X3DRoute * * ppRoute ) = 0;
+    virtual HRESULT __stdcall deleteRoute (
+        struct X3DRoute * pRoute ) = 0;
+    virtual HRESULT __stdcall getRootNodes (
+        struct X3DNodeArray * * rootnodes ) = 0;
+};
+
+enum X3DEncodingType
+{
+    X3DNO_SCENE = 0,
+    X3DSCRIPTED_ENCODING = 1,
+    X3DASCII_ENCODING = 2,
+    X3DCLASSIC_VRML_ENCODING = 3,
+    X3DXML_ENCODING = 4,
+    X3DBINARY_ENCODING = 5,
+    X3DBIFS_ENCODING = 6,
+    X3DLAST_STD_ENCODING = 100
+};
+
+struct __declspec(uuid("8aca7b53-957e-4432-8f40-2d8b105c856c"))
+X3DRoute : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall setClosure (
+        void * closure ) = 0;
+    virtual HRESULT __stdcall getClosure (
+        void * * closure ) = 0;
+    virtual HRESULT __stdcall setContext (
+        struct X3DExecutionContext * context ) = 0;
+    virtual HRESULT __stdcall getContext (
+        struct X3DExecutionContext * * result ) = 0;
+    virtual HRESULT __stdcall getSourceNode (
+        struct X3DNode * * pSourceNode ) = 0;
+    virtual HRESULT __stdcall getSourceField (
+        BSTR * sourcefield ) = 0;
+    virtual HRESULT __stdcall getDestinationNode (
+        struct X3DNode * * pDestinationNode ) = 0;
+    virtual HRESULT __stdcall getDestinationField (
+        BSTR * destinationfield ) = 0;
+};
+
+struct __declspec(uuid("b9a89471-6092-439d-a453-d23a80d62616"))
+X3DNodeArray : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall Item (
+        VARIANT index,
+        VARIANT * pItem ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_Count (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        struct X3DNode * * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        struct X3DNode * value ) = 0;
+};
+
+enum X3DFieldAccess
+{
+    X3DInitializeOnly = 0,
+    X3DInputOnly = 1,
+    X3DOutputOnly = 2,
+    X3DInputOutput = 3
+};
+
+enum X3DFieldType
+{
+    X3DUnknownFieldType = 0,
+    X3DSFBoolType = 1,
+    X3DMFBoolType = 2,
+    X3DSFColorType = 3,
+    X3DMFColorType = 4,
+    X3DSFColorRGBAType = 5,
+    X3DMFColorRGBAType = 6,
+    X3DSFDoubleType = 7,
+    X3DMFDoubleType = 8,
+    X3DSFFloatType = 9,
+    X3DMFFloatType = 10,
+    X3DSFImageType = 11,
+    X3DMFImageType = 12,
+    X3DSFInt32Type = 13,
+    X3DMFInt32Type = 14,
+    X3DSFNodeType = 15,
+    X3DMFNodeType = 16,
+    X3DSFRotationType = 17,
+    X3DMFRotationType = 18,
+    X3DSFStringType = 19,
+    X3DMFStringType = 20,
+    X3DSFTimeType = 21,
+    X3DMFTimeType = 22,
+    X3DSFVec2fType = 23,
+    X3DMFVec2fType = 24,
+    X3DSFVec2dType = 25,
+    X3DMFVec2dType = 26,
+    X3DSFVec3fType = 27,
+    X3DMFVec3fType = 28,
+    X3DSFVec3dType = 29,
+    X3DMFVec3dType = 30
+};
+
+struct __declspec(uuid("49ccca4a-56e1-42b1-8496-fce99aaf605b"))
+X3DFieldDefinitionArray : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall Item (
+        VARIANT index,
+        VARIANT * pItem ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_Count (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        long index,
+        struct X3DFieldDefinition * value ) = 0;
+};
+
+struct __declspec(uuid("b4665f92-c9c9-41b9-8eef-a46fba4e4615"))
+X3DFieldDefinition : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_name (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_name (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_dataType (
+        enum X3DFieldType * pVal ) = 0;
+    virtual HRESULT __stdcall put_dataType (
+        enum X3DFieldType pVal ) = 0;
+    virtual HRESULT __stdcall get_accesstype (
+        enum X3DFieldAccess * pVal ) = 0;
+    virtual HRESULT __stdcall put_accesstype (
+        enum X3DFieldAccess pVal ) = 0;
+};
+
+struct __declspec(uuid("1ddf9d8d-6931-4b5d-a2f6-8a341a1ad0cf"))
+X3DBrowser : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getName (
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall getVersion (
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall getCurrentSpeed (
+        float * value ) = 0;
+    virtual HRESULT __stdcall getCurrentFrameRate (
+        float * value ) = 0;
+    virtual HRESULT __stdcall getWorldURL (
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall replaceWorld (
+        struct X3DScene * value ) = 0;
+    virtual HRESULT __stdcall loadURL (
+        int nUrls,
+        BSTR * url,
+        int nParams,
+        BSTR * params ) = 0;
+    virtual HRESULT __stdcall setDescription (
+        BSTR description ) = 0;
+    virtual HRESULT __stdcall createX3DFromString (
+        BSTR x3dSource,
+        struct X3DScene * * scenereturn ) = 0;
+    virtual HRESULT __stdcall createX3DFromURL (
+        BSTR url,
+        struct X3DScene * * scenereturn ) = 0;
+    virtual HRESULT __stdcall setClosure (
+        void * closure ) = 0;
+    virtual HRESULT __stdcall getClosure (
+        void * closure ) = 0;
+    virtual HRESULT __stdcall print (
+        BSTR str ) = 0;
+    virtual HRESULT __stdcall loadUrlS (
+        BSTR url ) = 0;
+    virtual HRESULT __stdcall getExecutionContext (
+        struct X3DExecutionContext * * ppContext ) = 0;
+    virtual HRESULT __stdcall addBrowserListener (
+        IDispatch * pListener ) = 0;
+    virtual HRESULT __stdcall removeBrowserListener (
+        IDispatch * pListener ) = 0;
+};
+
+struct __declspec(uuid("006fbcdf-28e2-4f47-a2f4-f493ad909844"))
+X3DScene : X3DExecutionContext
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getMetaData (
+        BSTR key,
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall setMetaData (
+        BSTR key,
+        BSTR value ) = 0;
+    virtual HRESULT __stdcall addRootNode (
+        struct X3DNode * node ) = 0;
+    virtual HRESULT __stdcall removeRootNode (
+        struct X3DNode * node ) = 0;
+};
+
+struct __declspec(uuid("3497632d-0ca7-4ec8-bcda-09564868b9f2"))
+X3DEventOutObserver : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall callbackFunction (
+        struct X3DField * value,
+        double timeStamp,
+        IDispatch * userData ) = 0;
+};
+
+struct __declspec(uuid("7e147096-e5b6-4c6c-a610-256de53b92ec"))
+X3DBrowserListener : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall browserChanged (
+        enum X3DBrowserEvent event ) = 0;
+};
+
+enum X3DBrowserEvent
+{
+    X3DBROWSER_INITIALIZED = 0,
+    X3DBROWSER_SHUTDOWN = 1,
+    X3DBROWSER_CONNECTIONERROR = 2,
+    X3DBROWSER_URLERROR = 3
+};
+
+struct __declspec(uuid("2ee4bbca-e98e-407d-8e37-90eb2fe2e856"))
+X3DFieldEventListener : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall readableFieldChanged (
+        struct X3DField * pField,
+        double timeStamp ) = 0;
+};
+
+struct __declspec(uuid("2de0158a-0c8e-4667-820c-074953fb957a"))
+X3DSFBool : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        VARIANT_BOOL * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        VARIANT_BOOL value ) = 0;
+};
+
+struct __declspec(uuid("c7c5930c-186e-4b78-8040-bd1226828888"))
+X3DSFColor : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall get_r (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_r (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_g (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_g (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_b (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_b (
+        float pVal ) = 0;
+};
+
+struct __declspec(uuid("2d91d7e4-8a06-4626-8a41-6877657d1034"))
+X3DSFFloat : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        float value ) = 0;
+};
+
+struct __declspec(uuid("1db18114-e6a1-490e-a4c2-a29201999696"))
+X3DSFInt32 : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        long * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        long value ) = 0;
+};
+
+struct __declspec(uuid("9410f6bf-be28-48f8-97e8-7b040fc8e25c"))
+X3DSFNode : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        struct X3DNode * * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        struct X3DNode * value ) = 0;
+};
+
+struct __declspec(uuid("b13c7843-eb3b-4d36-8c77-7c4dd37277f1"))
+X3DSFRotation : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall get_x (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_x (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_y (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_y (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_z (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_z (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_angle (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_angle (
+        float pVal ) = 0;
+};
+
+struct __declspec(uuid("ad9e8b1d-84cb-498f-b050-ffd913a5d875"))
+X3DSFString : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        BSTR value ) = 0;
+};
+
+struct __declspec(uuid("8152c989-858a-470d-bc61-0532ec81a902"))
+X3DSFVec2f : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall get_x (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_x (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_y (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_y (
+        float pVal ) = 0;
+};
+
+struct __declspec(uuid("86771eaa-a5eb-4f9f-82c1-437160dab4a5"))
+X3DSFVec3f : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        float * value ) = 0;
+    virtual HRESULT __stdcall get_x (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_x (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_y (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_y (
+        float pVal ) = 0;
+    virtual HRESULT __stdcall get_z (
+        float * pVal ) = 0;
+    virtual HRESULT __stdcall put_z (
+        float pVal ) = 0;
+};
+
+struct __declspec(uuid("44166b5d-ca84-4dfe-9abb-5b03e72e9c05"))
+_DAnima : IDispatch
+{};
+
+struct __declspec(uuid("cfb6910f-3849-417e-9217-a8532e7a1380"))
+_DAnimaEvents : IDispatch
+{};
+
+struct __declspec(uuid("4a564091-9a41-43dc-ae4c-4a1457d5a53e"))
+X3DMField : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall Item (
+        VARIANT index,
+        VARIANT * pItem ) = 0;
+};
+
+struct __declspec(uuid("16662d28-9e70-4161-a2ab-f0c65506df3b"))
+X3DMFColor : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        struct X3DSFColor * value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        struct X3DSFColor * * value ) = 0;
+};
+
+struct __declspec(uuid("041bc54c-f94b-4829-a05e-8e7059423524"))
+X3DMFNode : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        struct X3DNodeArray * * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        struct X3DNodeArray * value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        struct X3DNode * * value ) = 0;
+    virtual HRESULT __stdcall get1ValueV (
+        int index,
+        VARIANT * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        struct X3DNode * value ) = 0;
+};
+
+struct __declspec(uuid("3172e8a3-97eb-4dd3-866a-3fbc0f6ea457"))
+X3DSFTime : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        double * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        double * value ) = 0;
+};
+
+struct __declspec(uuid("918b202d-8e8f-4649-a70b-e9b178fedc58"))
+Anima;
+    // [ default ] dispinterface _DAnima
+    // [ default, source ] dispinterface _DAnimaEvents
+
+struct __declspec(uuid("d181aeda-e6cc-4556-8948-23d2c6222531"))
+IDashboard1 : IDispatch
+{};
+
+struct __declspec(uuid("25b54d15-eabb-4e27-b84c-2e2896368e89"))
+DASHBOARD;
+    // [ default ] dispinterface IDashboard1
+
+struct __declspec(uuid("31042e47-eb83-4d36-bc6a-00d29006fee5"))
+CoX3DNode;
+    // [ default ] interface X3DNode
+
+struct __declspec(uuid("36ecd09e-f20d-4897-959d-95761801b87d"))
+CoX3DField;
+    // [ default ] interface X3DField
+
+struct __declspec(uuid("f61f61ce-117d-4772-b2cb-388a2cfaca52"))
+CoX3DBrowser;
+    // [ default ] interface X3DBrowser
+
+struct __declspec(uuid("4f65cfbc-e8c1-4835-b2db-4a59628ffbc2"))
+CoX3DSFBool;
+    // [ default ] interface X3DSFBool
+
+struct __declspec(uuid("08f3f97a-01d7-4e0d-b4f4-46ea035e08e4"))
+CoX3DMField;
+    // [ default ] interface X3DMField
+
+struct __declspec(uuid("7e36e664-91fd-4702-b427-6d8083a75f05"))
+CoX3DMFColor;
+    // [ default ] interface X3DMFColor
+
+struct __declspec(uuid("6f11013e-cfa1-47a2-87f9-d491e6e108a8"))
+CoX3DMFNode;
+    // [ default ] interface X3DMFNode
+
+struct __declspec(uuid("7fce58b1-f0bd-4696-a370-f9ef021fc3d5"))
+_X3DSFTimeEvents : IDispatch
+{};
+
+struct __declspec(uuid("b4365441-8859-413f-8f16-ea0ad6e98d00"))
+X3DMFFloat : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        float value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        float * value ) = 0;
+};
+
+struct __declspec(uuid("ce3b6fcd-8e08-4191-997a-b25dda640aef"))
+X3DMFInt32 : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        int cnt,
+        long * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        int cnt,
+        long * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        long value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        long * value ) = 0;
+};
+
+struct __declspec(uuid("43d3e0ea-68ef-4923-85da-d1d9bef80212"))
+X3DMFRotation : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        struct X3DSFRotation * value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        struct X3DSFRotation * * value ) = 0;
+};
+
+struct __declspec(uuid("28fa5559-97bc-42cd-8e9a-b921f4b1a8cc"))
+X3DMFString : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        int cnt,
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        int cnt,
+        BSTR * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        BSTR value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        BSTR * value ) = 0;
+};
+
+struct __declspec(uuid("7c4602a2-f24c-40f0-ba32-92c9aeceb11e"))
+X3DMFVec2f : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        struct X3DSFVec2f * value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        struct X3DSFVec2f * * value ) = 0;
+};
+
+struct __declspec(uuid("42b550d1-a010-4da8-9538-ecd651b35f02"))
+X3DMFVec3f : X3DMField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        int cnt,
+        float * value ) = 0;
+    virtual HRESULT __stdcall set1Value (
+        int index,
+        struct X3DSFVec3f * value ) = 0;
+    virtual HRESULT __stdcall get1Value (
+        int index,
+        struct X3DSFVec3f * * value ) = 0;
+};
+
+struct __declspec(uuid("2b0eb163-01b0-42a9-9979-f5e969306d32"))
+X3DSFDouble : X3DField
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall getValue (
+        double * value ) = 0;
+    virtual HRESULT __stdcall setValue (
+        double value ) = 0;
+};
+
+struct __declspec(uuid("47dee776-2909-45e7-bdbb-7e9ec092a290"))
+IFluxPlayer : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall AboutBox ( ) = 0;
+    virtual HRESULT __stdcall get_src (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_src (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall setFluxControl (
+        void * pFluxCtrl ) = 0;
+};
+
+struct __declspec(uuid("62357248-742f-4bc6-84bf-bf622d5ead02"))
+X3DExternalBrowser : X3DBrowser
+{
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall beginUpdate ( ) = 0;
+    virtual HRESULT __stdcall endUpdate ( ) = 0;
+};
+
+struct __declspec(uuid("8c7db996-4067-4e0b-831a-380d1c3b22b0"))
+CoX3DSFTime;
+    // [ default ] interface X3DSFTime
+    // [ default, source ] dispinterface _X3DSFTimeEvents
+
+struct __declspec(uuid("5dcc9cd7-5a07-4e96-9406-8f08fce28f1b"))
+CoX3DEventOutObserver;
+    // [ default ] interface X3DEventOutObserver
+
+struct __declspec(uuid("288b5bd0-18b5-4dc0-a43a-9ff0bdf10fd8"))
+CoX3DSFColor;
+    // [ default ] interface X3DSFColor
+
+struct __declspec(uuid("9a6ff18f-2f67-4d38-930c-57417472bd9b"))
+CoX3DSFFloat;
+    // [ default ] interface X3DSFFloat
+
+struct __declspec(uuid("682c3b9d-7462-4583-9ac7-1b8426ef7fc6"))
+CoX3DSFInt32;
+    // [ default ] interface X3DSFInt32
+
+struct __declspec(uuid("31812207-62d7-42c0-96c1-a2caf2fb89f6"))
+CoX3DSFNode;
+    // [ default ] interface X3DSFNode
+
+struct __declspec(uuid("6fe68a4e-cda6-4f66-bcf0-1532de56ce89"))
+CoX3DSFRotation;
+    // [ default ] interface X3DSFRotation
+
+struct __declspec(uuid("84dbdfa8-9f78-44db-ab52-66c60022b521"))
+CoX3DSFString;
+    // [ default ] interface X3DSFString
+
+struct __declspec(uuid("56c77cb8-f7ac-47ea-83ef-a10e54f77747"))
+CoX3DSFVec2f;
+    // [ default ] interface X3DSFVec2f
+
+struct __declspec(uuid("8a40d936-57a8-4991-aad8-bfccb0877e9c"))
+CoX3DSFVec3f;
+    // [ default ] interface X3DSFVec3f
+
+struct __declspec(uuid("71979f5b-1e40-495a-ada9-d351f014b37b"))
+CoX3DMFFloat;
+    // [ default ] interface X3DMFFloat
+
+struct __declspec(uuid("90a72b6d-6161-4030-a491-76f3168a3e86"))
+CoX3DMFInt32;
+    // [ default ] interface X3DMFInt32
+
+struct __declspec(uuid("7aa35b65-2b21-4996-8c4b-f86871a8f7a4"))
+CoX3DMFRotation;
+    // [ default ] interface X3DMFRotation
+
+struct __declspec(uuid("11916947-30f6-4b01-b071-c7f9c99c6628"))
+CoX3DMFString;
+    // [ default ] interface X3DMFString
+
+struct __declspec(uuid("0acb238b-5f48-4cf9-953d-223b91311e00"))
+CoX3DMFVec2f;
+    // [ default ] interface X3DMFVec2f
+
+struct __declspec(uuid("99c98869-477e-4edd-a5db-760797484e22"))
+CoX3DMFVec3f;
+    // [ default ] interface X3DMFVec3f
+
+struct __declspec(uuid("435362c0-fe67-4ff2-b2cb-0809349956c5"))
+CoX3DSFDouble;
+    // [ default ] interface X3DSFDouble
+
+struct __declspec(uuid("45adf2d9-b311-4758-9220-f8d6d582d2d7"))
+FluxPlayer;
+    // [ default ] interface IFluxPlayer
+
+struct __declspec(uuid("563e697a-6954-422b-a82d-d61568522765"))
+CoX3DExecutionContext;
+    // [ default ] interface X3DExecutionContext
+
+struct __declspec(uuid("03b74f4e-8be5-453e-a870-92e1a3066b1f"))
+CoX3DScene;
+    // [ default ] interface X3DScene
+
+struct __declspec(uuid("af56d457-7df6-4f5d-95e9-72ccc8f8a792"))
+CoX3DBrowserListener;
+    // [ default ] interface X3DBrowserListener
+
+struct __declspec(uuid("6a04e913-b549-4f17-98ae-8808d7c36e30"))
+CoX3DExternalBrowser;
+    // [ default ] interface X3DExternalBrowser
+
+struct __declspec(uuid("dab90b62-3b19-47ed-ac2d-f71063daf907"))
+CoX3DFieldEventListener;
+    // [ default ] interface X3DFieldEventListener
+
+struct __declspec(uuid("ee3bdcfd-4156-4d11-8227-f8be60213837"))
+CoX3DRoute;
+    // [ default ] interface X3DRoute
+
+struct __declspec(uuid("57c5c0f8-555e-4111-aa96-f9f747256b46"))
+CoX3DNodeArray;
+    // [ default ] interface X3DNodeArray
+
+struct __declspec(uuid("61c1da98-3b82-41f8-8327-6002920d2697"))
+CoX3DFieldDefinition;
+    // [ default ] interface X3DFieldDefinition
+
+struct __declspec(uuid("7c1f3af8-c47d-4d55-9f25-64b9972c1126"))
+CoX3DFieldDefinitionArray;
+    // [ default ] interface X3DFieldDefinitionArray
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_ANIMALib =
+    {0xcb2426cf,0x7360,0x42ca,{0xae,0xf2,0x6f,0xbd,0x9f,0x95,0x9e,0xd4}};
+extern "C" const GUID __declspec(selectany) IID_X3DNode =
+    {0x33a5c345,0x9c42,0x430e,{0xa2,0x08,0x3f,0xe9,0x42,0x99,0x94,0x86}};
+extern "C" const GUID __declspec(selectany) IID_X3DField =
+    {0x77590c91,0x073d,0x428e,{0x89,0x40,0x7c,0xd1,0x4b,0x18,0x97,0xc8}};
+extern "C" const GUID __declspec(selectany) IID_X3DExecutionContext =
+    {0x4b456961,0x5d8c,0x4e07,{0x81,0x31,0x84,0x8a,0x23,0x75,0x3e,0x04}};
+extern "C" const GUID __declspec(selectany) IID_X3DRoute =
+    {0x8aca7b53,0x957e,0x4432,{0x8f,0x40,0x2d,0x8b,0x10,0x5c,0x85,0x6c}};
+extern "C" const GUID __declspec(selectany) IID_X3DNodeArray =
+    {0xb9a89471,0x6092,0x439d,{0xa4,0x53,0xd2,0x3a,0x80,0xd6,0x26,0x16}};
+extern "C" const GUID __declspec(selectany) IID_X3DFieldDefinitionArray =
+    {0x49ccca4a,0x56e1,0x42b1,{0x84,0x96,0xfc,0xe9,0x9a,0xaf,0x60,0x5b}};
+extern "C" const GUID __declspec(selectany) IID_X3DFieldDefinition =
+    {0xb4665f92,0xc9c9,0x41b9,{0x8e,0xef,0xa4,0x6f,0xba,0x4e,0x46,0x15}};
+extern "C" const GUID __declspec(selectany) IID_X3DBrowser =
+    {0x1ddf9d8d,0x6931,0x4b5d,{0xa2,0xf6,0x8a,0x34,0x1a,0x1a,0xd0,0xcf}};
+extern "C" const GUID __declspec(selectany) IID_X3DScene =
+    {0x006fbcdf,0x28e2,0x4f47,{0xa2,0xf4,0xf4,0x93,0xad,0x90,0x98,0x44}};
+extern "C" const GUID __declspec(selectany) IID_X3DEventOutObserver =
+    {0x3497632d,0x0ca7,0x4ec8,{0xbc,0xda,0x09,0x56,0x48,0x68,0xb9,0xf2}};
+extern "C" const GUID __declspec(selectany) IID_X3DBrowserListener =
+    {0x7e147096,0xe5b6,0x4c6c,{0xa6,0x10,0x25,0x6d,0xe5,0x3b,0x92,0xec}};
+extern "C" const GUID __declspec(selectany) IID_X3DFieldEventListener =
+    {0x2ee4bbca,0xe98e,0x407d,{0x8e,0x37,0x90,0xeb,0x2f,0xe2,0xe8,0x56}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFBool =
+    {0x2de0158a,0x0c8e,0x4667,{0x82,0x0c,0x07,0x49,0x53,0xfb,0x95,0x7a}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFColor =
+    {0xc7c5930c,0x186e,0x4b78,{0x80,0x40,0xbd,0x12,0x26,0x82,0x88,0x88}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFFloat =
+    {0x2d91d7e4,0x8a06,0x4626,{0x8a,0x41,0x68,0x77,0x65,0x7d,0x10,0x34}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFInt32 =
+    {0x1db18114,0xe6a1,0x490e,{0xa4,0xc2,0xa2,0x92,0x01,0x99,0x96,0x96}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFNode =
+    {0x9410f6bf,0xbe28,0x48f8,{0x97,0xe8,0x7b,0x04,0x0f,0xc8,0xe2,0x5c}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFRotation =
+    {0xb13c7843,0xeb3b,0x4d36,{0x8c,0x77,0x7c,0x4d,0xd3,0x72,0x77,0xf1}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFString =
+    {0xad9e8b1d,0x84cb,0x498f,{0xb0,0x50,0xff,0xd9,0x13,0xa5,0xd8,0x75}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFVec2f =
+    {0x8152c989,0x858a,0x470d,{0xbc,0x61,0x05,0x32,0xec,0x81,0xa9,0x02}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFVec3f =
+    {0x86771eaa,0xa5eb,0x4f9f,{0x82,0xc1,0x43,0x71,0x60,0xda,0xb4,0xa5}};
+extern "C" const GUID __declspec(selectany) DIID__DAnima =
+    {0x44166b5d,0xca84,0x4dfe,{0x9a,0xbb,0x5b,0x03,0xe7,0x2e,0x9c,0x05}};
+extern "C" const GUID __declspec(selectany) DIID__DAnimaEvents =
+    {0xcfb6910f,0x3849,0x417e,{0x92,0x17,0xa8,0x53,0x2e,0x7a,0x13,0x80}};
+extern "C" const GUID __declspec(selectany) IID_X3DMField =
+    {0x4a564091,0x9a41,0x43dc,{0xae,0x4c,0x4a,0x14,0x57,0xd5,0xa5,0x3e}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFColor =
+    {0x16662d28,0x9e70,0x4161,{0xa2,0xab,0xf0,0xc6,0x55,0x06,0xdf,0x3b}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFNode =
+    {0x041bc54c,0xf94b,0x4829,{0xa0,0x5e,0x8e,0x70,0x59,0x42,0x35,0x24}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFTime =
+    {0x3172e8a3,0x97eb,0x4dd3,{0x86,0x6a,0x3f,0xbc,0x0f,0x6e,0xa4,0x57}};
+extern "C" const GUID __declspec(selectany) CLSID_Anima =
+    {0x918b202d,0x8e8f,0x4649,{0xa7,0x0b,0xe9,0xb1,0x78,0xfe,0xdc,0x58}};
+extern "C" const GUID __declspec(selectany) DIID_IDashboard1 =
+    {0xd181aeda,0xe6cc,0x4556,{0x89,0x48,0x23,0xd2,0xc6,0x22,0x25,0x31}};
+extern "C" const GUID __declspec(selectany) CLSID_DASHBOARD =
+    {0x25b54d15,0xeabb,0x4e27,{0xb8,0x4c,0x2e,0x28,0x96,0x36,0x8e,0x89}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DNode =
+    {0x31042e47,0xeb83,0x4d36,{0xbc,0x6a,0x00,0xd2,0x90,0x06,0xfe,0xe5}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DField =
+    {0x36ecd09e,0xf20d,0x4897,{0x95,0x9d,0x95,0x76,0x18,0x01,0xb8,0x7d}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DBrowser =
+    {0xf61f61ce,0x117d,0x4772,{0xb2,0xcb,0x38,0x8a,0x2c,0xfa,0xca,0x52}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFBool =
+    {0x4f65cfbc,0xe8c1,0x4835,{0xb2,0xdb,0x4a,0x59,0x62,0x8f,0xfb,0xc2}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMField =
+    {0x08f3f97a,0x01d7,0x4e0d,{0xb4,0xf4,0x46,0xea,0x03,0x5e,0x08,0xe4}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFColor =
+    {0x7e36e664,0x91fd,0x4702,{0xb4,0x27,0x6d,0x80,0x83,0xa7,0x5f,0x05}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFNode =
+    {0x6f11013e,0xcfa1,0x47a2,{0x87,0xf9,0xd4,0x91,0xe6,0xe1,0x08,0xa8}};
+extern "C" const GUID __declspec(selectany) DIID__X3DSFTimeEvents =
+    {0x7fce58b1,0xf0bd,0x4696,{0xa3,0x70,0xf9,0xef,0x02,0x1f,0xc3,0xd5}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFFloat =
+    {0xb4365441,0x8859,0x413f,{0x8f,0x16,0xea,0x0a,0xd6,0xe9,0x8d,0x00}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFInt32 =
+    {0xce3b6fcd,0x8e08,0x4191,{0x99,0x7a,0xb2,0x5d,0xda,0x64,0x0a,0xef}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFRotation =
+    {0x43d3e0ea,0x68ef,0x4923,{0x85,0xda,0xd1,0xd9,0xbe,0xf8,0x02,0x12}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFString =
+    {0x28fa5559,0x97bc,0x42cd,{0x8e,0x9a,0xb9,0x21,0xf4,0xb1,0xa8,0xcc}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFVec2f =
+    {0x7c4602a2,0xf24c,0x40f0,{0xba,0x32,0x92,0xc9,0xae,0xce,0xb1,0x1e}};
+extern "C" const GUID __declspec(selectany) IID_X3DMFVec3f =
+    {0x42b550d1,0xa010,0x4da8,{0x95,0x38,0xec,0xd6,0x51,0xb3,0x5f,0x02}};
+extern "C" const GUID __declspec(selectany) IID_X3DSFDouble =
+    {0x2b0eb163,0x01b0,0x42a9,{0x99,0x79,0xf5,0xe9,0x69,0x30,0x6d,0x32}};
+extern "C" const GUID __declspec(selectany) IID_IFluxPlayer =
+    {0x47dee776,0x2909,0x45e7,{0xbd,0xbb,0x7e,0x9e,0xc0,0x92,0xa2,0x90}};
+extern "C" const GUID __declspec(selectany) IID_X3DExternalBrowser =
+    {0x62357248,0x742f,0x4bc6,{0x84,0xbf,0xbf,0x62,0x2d,0x5e,0xad,0x02}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFTime =
+    {0x8c7db996,0x4067,0x4e0b,{0x83,0x1a,0x38,0x0d,0x1c,0x3b,0x22,0xb0}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DEventOutObserver =
+    {0x5dcc9cd7,0x5a07,0x4e96,{0x94,0x06,0x8f,0x08,0xfc,0xe2,0x8f,0x1b}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFColor =
+    {0x288b5bd0,0x18b5,0x4dc0,{0xa4,0x3a,0x9f,0xf0,0xbd,0xf1,0x0f,0xd8}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFFloat =
+    {0x9a6ff18f,0x2f67,0x4d38,{0x93,0x0c,0x57,0x41,0x74,0x72,0xbd,0x9b}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFInt32 =
+    {0x682c3b9d,0x7462,0x4583,{0x9a,0xc7,0x1b,0x84,0x26,0xef,0x7f,0xc6}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFNode =
+    {0x31812207,0x62d7,0x42c0,{0x96,0xc1,0xa2,0xca,0xf2,0xfb,0x89,0xf6}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFRotation =
+    {0x6fe68a4e,0xcda6,0x4f66,{0xbc,0xf0,0x15,0x32,0xde,0x56,0xce,0x89}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFString =
+    {0x84dbdfa8,0x9f78,0x44db,{0xab,0x52,0x66,0xc6,0x00,0x22,0xb5,0x21}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFVec2f =
+    {0x56c77cb8,0xf7ac,0x47ea,{0x83,0xef,0xa1,0x0e,0x54,0xf7,0x77,0x47}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFVec3f =
+    {0x8a40d936,0x57a8,0x4991,{0xaa,0xd8,0xbf,0xcc,0xb0,0x87,0x7e,0x9c}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFFloat =
+    {0x71979f5b,0x1e40,0x495a,{0xad,0xa9,0xd3,0x51,0xf0,0x14,0xb3,0x7b}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFInt32 =
+    {0x90a72b6d,0x6161,0x4030,{0xa4,0x91,0x76,0xf3,0x16,0x8a,0x3e,0x86}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFRotation =
+    {0x7aa35b65,0x2b21,0x4996,{0x8c,0x4b,0xf8,0x68,0x71,0xa8,0xf7,0xa4}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFString =
+    {0x11916947,0x30f6,0x4b01,{0xb0,0x71,0xc7,0xf9,0xc9,0x9c,0x66,0x28}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFVec2f =
+    {0x0acb238b,0x5f48,0x4cf9,{0x95,0x3d,0x22,0x3b,0x91,0x31,0x1e,0x00}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DMFVec3f =
+    {0x99c98869,0x477e,0x4edd,{0xa5,0xdb,0x76,0x07,0x97,0x48,0x4e,0x22}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DSFDouble =
+    {0x435362c0,0xfe67,0x4ff2,{0xb2,0xcb,0x08,0x09,0x34,0x99,0x56,0xc5}};
+extern "C" const GUID __declspec(selectany) CLSID_FluxPlayer =
+    {0x45adf2d9,0xb311,0x4758,{0x92,0x20,0xf8,0xd6,0xd5,0x82,0xd2,0xd7}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DExecutionContext =
+    {0x563e697a,0x6954,0x422b,{0xa8,0x2d,0xd6,0x15,0x68,0x52,0x27,0x65}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DScene =
+    {0x03b74f4e,0x8be5,0x453e,{0xa8,0x70,0x92,0xe1,0xa3,0x06,0x6b,0x1f}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DBrowserListener =
+    {0xaf56d457,0x7df6,0x4f5d,{0x95,0xe9,0x72,0xcc,0xc8,0xf8,0xa7,0x92}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DExternalBrowser =
+    {0x6a04e913,0xb549,0x4f17,{0x98,0xae,0x88,0x08,0xd7,0xc3,0x6e,0x30}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DFieldEventListener =
+    {0xdab90b62,0x3b19,0x47ed,{0xac,0x2d,0xf7,0x10,0x63,0xda,0xf9,0x07}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DRoute =
+    {0xee3bdcfd,0x4156,0x4d11,{0x82,0x27,0xf8,0xbe,0x60,0x21,0x38,0x37}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DNodeArray =
+    {0x57c5c0f8,0x555e,0x4111,{0xaa,0x96,0xf9,0xf7,0x47,0x25,0x6b,0x46}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DFieldDefinition =
+    {0x61c1da98,0x3b82,0x41f8,{0x83,0x27,0x60,0x02,0x92,0x0d,0x26,0x97}};
+extern "C" const GUID __declspec(selectany) CLSID_CoX3DFieldDefinitionArray =
+    {0x7c1f3af8,0xc47d,0x4d55,{0x9f,0x25,0x64,0xb9,0x97,0x2c,0x11,0x26}};
+
+#pragma pack(pop)

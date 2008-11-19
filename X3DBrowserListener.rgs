@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DBrowserListener.1 = s 'X3DBrowserListener Class'
+	{
+		CLSID = s '{AF56D457-7DF6-4F5D-95E9-72CCC8F8A792}'
+	}
+	Anima.X3DBrowserListener = s 'X3DBrowserListener Class'
+	{
+		CLSID = s '{AF56D457-7DF6-4F5D-95E9-72CCC8F8A792}'
+		CurVer = s 'Anima.X3DBrowserListener.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {AF56D457-7DF6-4F5D-95E9-72CCC8F8A792} = s 'X3DBrowserListener Class'
+		{
+			ProgID = s 'Anima.X3DBrowserListener.1'
+			VersionIndependentProgID = s 'Anima.X3DBrowserListener'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

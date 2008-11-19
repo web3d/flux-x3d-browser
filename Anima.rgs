@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{12B001AC-6947-4E18-850F-4DF805641185} = s 'Anima'
+		'Anima.EXE'
+		{
+			val AppID = s {12B001AC-6947-4E18-850F-4DF805641185}
+		}
+	}
+}

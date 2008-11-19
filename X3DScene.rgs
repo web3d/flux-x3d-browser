@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DScene.1 = s 'X3DScene Class'
+	{
+		CLSID = s '{03B74F4E-8BE5-453E-A870-92E1A3066B1F}'
+	}
+	Anima.X3DScene = s 'X3DScene Class'
+	{
+		CLSID = s '{03B74F4E-8BE5-453E-A870-92E1A3066B1F}'
+		CurVer = s 'Anima.X3DScene.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {03B74F4E-8BE5-453E-A870-92E1A3066B1F} = s 'X3DScene Class'
+		{
+			ProgID = s 'Anima.X3DScene.1'
+			VersionIndependentProgID = s 'Anima.X3DScene'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

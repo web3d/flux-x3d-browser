@@ -1,0 +1,464 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: fluxcore - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/fluxcore.res" /d "NDEBUG" /d "_AFXDLL" "C:\Keith\svnmerge\flux_svn\fluxcore\fluxcore.rc"" 
+Creating temporary file "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP6C.tmp" with contents
+[
+..\imageio\zlib.lib strmbase.lib dsound.lib dxguid.lib Msimg32.lib glu32.lib wininet.lib shlwapi.lib winmm.lib version.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/fluxcore.pdb" /machine:I386 /def:".\fluxcore.def" /out:"../Release/fluxcore.dll" /implib:"Release/fluxcore.lib" 
+.\Release\AnimaApp.obj
+.\Release\AnmConsole.obj
+.\Release\anmdashboard.obj
+.\Release\anmdashboardcontrol.obj
+.\Release\AnmTooltip.obj
+.\Release\AnmView.obj
+.\Release\fluxcore.obj
+.\Release\StdAfx.obj
+.\Release\anmlayer.obj
+.\Release\anmlayer2D.obj
+.\Release\anmlayer3D.obj
+.\Release\anmlayout.obj
+.\Release\anmlayoutgroup.obj
+.\Release\anmmainlayer.obj
+.\Release\anmscreenfontstyle.obj
+.\Release\anmscreengroup.obj
+.\Release\anmparticleset.obj
+.\Release\anmknotvector.obj
+.\Release\anmnurbspatchsurface.obj
+.\Release\anmnurbssurfaceevaluator.obj
+.\Release\anmnurbssurfaceinterpolator.obj
+.\Release\anmnurbstexturecoordinate.obj
+.\Release\anmhanimdisplacer.obj
+.\Release\anmhanimhumanoid.obj
+.\Release\anmhanimjoint.obj
+.\Release\anmhanimsegment.obj
+.\Release\anmhanimsite.obj
+.\Release\BitmapReader.obj
+.\Release\gifio.obj
+.\Release\jcapimin.obj
+.\Release\jcapistd.obj
+.\Release\jccoefct.obj
+.\Release\jccolor.obj
+.\Release\jcdctmgr.obj
+.\Release\jchuff.obj
+.\Release\jcinit.obj
+.\Release\jcmainct.obj
+.\Release\jcmarker.obj
+.\Release\jcmaster.obj
+.\Release\JCOMAPI.OBJ
+.\Release\jcparam.obj
+.\Release\jcphuff.obj
+.\Release\jcprepct.obj
+.\Release\jcsample.obj
+.\Release\JDAPIMIN.OBJ
+.\Release\JDAPISTD.OBJ
+.\Release\jdatadst.obj
+.\Release\JDATASRC.OBJ
+.\Release\JDC.OBJ
+.\Release\JDCOLOR.OBJ
+.\Release\JDDCTMGR.OBJ
+.\Release\JDHUFF.OBJ
+.\Release\JDINPUT.OBJ
+.\Release\JDMAINCT.OBJ
+.\Release\JDMARKER.OBJ
+.\Release\JDMASTER.OBJ
+.\Release\JDMERGE.OBJ
+.\Release\JDPHUFF.OBJ
+.\Release\JDPOSTCT.OBJ
+.\Release\JDSAMPLE.OBJ
+.\Release\JERROR.OBJ
+.\Release\Jfdctflt.obj
+.\Release\Jfdctfst.obj
+.\Release\Jfdctint.obj
+.\Release\JIDCTFLT.OBJ
+.\Release\JIDCTFST2.OBJ
+.\Release\JIDCTINT.OBJ
+.\Release\JIDCTRED.OBJ
+.\Release\JMEMMGR.OBJ
+.\Release\Jmemnobs.obj
+.\Release\jpgread.obj
+.\Release\JQUANT1.OBJ
+.\Release\JQUANT2.OBJ
+.\Release\JUTILS.OBJ
+.\Release\pngerror.obj
+.\Release\pngget.obj
+.\Release\pngmem.obj
+.\Release\pngpng.obj
+.\Release\pngpread.obj
+.\Release\pngread.obj
+.\Release\pngrio.obj
+.\Release\pngrtran.obj
+.\Release\pngrutil.obj
+.\Release\pngset.obj
+.\Release\pngtrans.obj
+.\Release\pngvcrd.obj
+.\Release\pngwio.obj
+.\Release\pngwrite.obj
+.\Release\pngwtran.obj
+.\Release\pngwutil.obj
+.\Release\anmmovietexture.obj
+.\Release\anmmovietexturerenderer.obj
+.\Release\anmbooleanfilter.obj
+.\Release\anmbooleansequencer.obj
+.\Release\anmbooleantoggle.obj
+.\Release\anmbooleantrigger.obj
+.\Release\anmintegersequencer.obj
+.\Release\anmintegertrigger.obj
+.\Release\anmtimetrigger.obj
+.\Release\anmbrowser.obj
+.\Release\anmexecutioncontext.obj
+.\Release\anmexternalbrowser.obj
+.\Release\anmsaimatrix.obj
+.\Release\anmsainode.obj
+.\Release\anmsainodeventsink.obj
+.\Release\anmsairoute.obj
+.\Release\anmsaiscene.obj
+.\Release\anmanchor.obj
+.\Release\anminline.obj
+.\Release\anmloadsensor.obj
+.\Release\anmnetworkthread.obj
+.\Release\anmurlobject.obj
+.\Release\anmnavigationinfo.obj
+.\Release\anmviewer.obj
+.\Release\anmfrustum.obj
+.\Release\anmhsvcolor.obj
+.\Release\anmintersection.obj
+.\Release\anmmatrixinvert.obj
+.\Release\anmpolygon.obj
+.\Release\anmquaternion.obj
+.\Release\MMDMatrixOps.obj
+.\Release\MMFMatrixOps.obj
+.\Release\anmevent.obj
+.\Release\anmroute.obj
+.\Release\anmcolorinterpolator.obj
+.\Release\anmcoordinateinterpolator.obj
+.\Release\anmcoordinateinterpolator2D.obj
+.\Release\anmeaseineaseout.obj
+.\Release\anmnormalinterpolator.obj
+.\Release\anmorientationinterpolator.obj
+.\Release\anmpositioninterpolator.obj
+.\Release\anmpositioninterpolator2D.obj
+.\Release\anmscalarinterpolator.obj
+.\Release\anmSplinePositionInterpolator.obj
+.\Release\anmSplinePositionInterpolator2D.obj
+.\Release\anmsplinescalarInterpolator.obj
+.\Release\anmtime.obj
+.\Release\anmtimedependentobject.obj
+.\Release\anmtimesensor.obj
+.\Release\anmbindablenode.obj
+.\Release\anmclass.obj
+.\Release\anmmetadatadouble.obj
+.\Release\anmmetadatafloat.obj
+.\Release\anmmetadatainteger.obj
+.\Release\anmmetadatanode.obj
+.\Release\anmmetadataset.obj
+.\Release\anmmetadatastring.obj
+.\Release\anmobject.obj
+.\Release\anmsensor.obj
+.\Release\anmstring.obj
+.\Release\anmworld.obj
+.\Release\anmaudioclip.obj
+.\Release\anmaudioSensor.obj
+.\Release\anmaudioSensorRenderer.obj
+.\Release\anmmediasourceobject.obj
+.\Release\anmsound.obj
+.\Release\Fourier.obj
+.\Release\Sound.obj
+.\Release\SoundLayer.obj
+.\Release\Wavread.obj
+.\Release\anmcylindersensor.obj
+.\Release\anmkeyboardsensor.obj
+.\Release\anmkeysensor.obj
+.\Release\anmmousesensor.obj
+.\Release\anmpickmanager.obj
+.\Release\anmpicksensor.obj
+.\Release\anmplanesensor.obj
+.\Release\anmspheresensor.obj
+.\Release\anmstringsensor.obj
+.\Release\anmtouchsensor.obj
+.\Release\InputLayer.obj
+.\Release\Keyboard.obj
+.\Release\Mouse.obj
+.\Release\anmbindstatuscallback.obj
+.\Release\anmbitmap.obj
+.\Release\anmcontextmenu.obj
+.\Release\anmdecrypt.obj
+.\Release\anmfilemanager.obj
+.\Release\anmfilledrectangle.obj
+.\Release\anmfont.obj
+.\Release\anmgunzip.obj
+.\Release\anmplatform.obj
+.\Release\anmUpdateCheck.obj
+.\Release\application.obj
+.\Release\FileVersionInfo.obj
+.\Release\getdxver.obj
+.\Release\Window.obj
+.\Release\anmappearance.obj
+.\Release\anmbackground.obj
+.\Release\anmbillboard.obj
+.\Release\anmbox.obj
+.\Release\anmcollision.obj
+.\Release\anmcolor.obj
+.\Release\anmcomposedgeometry.obj
+.\Release\anmcone.obj
+.\Release\anmcoordinate.obj
+.\Release\anmcylinder.obj
+.\Release\anmdirectionallight.obj
+.\Release\anmelevationgrid.obj
+.\Release\anmextrusion.obj
+.\Release\anmfields.obj
+.\Release\anmfog.obj
+.\Release\anmfontstyle.obj
+.\Release\anmgeometry.obj
+.\Release\anmgroup.obj
+.\Release\anmimagetexture.obj
+.\Release\anmindexedfaceset.obj
+.\Release\anmindexedlineset.obj
+.\Release\anmindexedtriangleset.obj
+.\Release\anmlight.obj
+.\Release\anmlineset.obj
+.\Release\anmlod.obj
+.\Release\anmmaterial.obj
+.\Release\anmmultitexture.obj
+.\Release\anmmultitexturecoordinate.obj
+.\Release\anmmultitexturetransform.obj
+.\Release\anmnode.obj
+.\Release\anmnormal.obj
+.\Release\anmoctree.obj
+.\Release\anmpixeltexture.obj
+.\Release\anmpointlight.obj
+.\Release\anmpointset.obj
+.\Release\anmproto.obj
+.\Release\anmproximitysensor.obj
+.\Release\anmrenderobject.obj
+.\Release\anmscene.obj
+.\Release\anmshape.obj
+.\Release\anmsimvisitor.obj
+.\Release\anmsphere.obj
+.\Release\anmspotlight.obj
+.\Release\anmswitch.obj
+.\Release\anmtext.obj
+.\Release\anmtexture.obj
+.\Release\anmtexturecoordinate.obj
+.\Release\anmtexturecoordinategenerator.obj
+.\Release\anmtexturetransform.obj
+.\Release\anmtransform.obj
+.\Release\anmtrianglefanset.obj
+.\Release\anmtriangleset.obj
+.\Release\anmtrianglestripset.obj
+.\Release\anmupdatevisitor.obj
+.\Release\anmviewpoint.obj
+.\Release\anmvisibilitysensor.obj
+.\Release\anmvisitor.obj
+.\Release\anmworldinfo.obj
+.\Release\anmcamera.obj
+.\Release\anmdevice.obj
+.\Release\anmgraphics.obj
+.\Release\anmmesh.obj
+.\Release\anmprimitive.obj
+.\Release\anmtesselator.obj
+.\Release\anmtextglyph.obj
+.\Release\anmtextmesh.obj
+.\Release\anmtexturedata.obj
+.\Release\anmviewport.obj
+.\Release\crenderthread.obj
+.\Release\anmfileloader.obj
+.\Release\anmfilereader.obj
+.\Release\anmlexer.obj
+.\Release\anmniynodes.obj
+.\Release\anmprotobuilder.obj
+.\Release\anmsymbol.obj
+.\Release\anmvrml97lexer.obj
+.\Release\anmvrml97reader.obj
+.\Release\anmvrmlgrammar.obj
+.\Release\anmxmldomreader.obj
+.\Release\anmxmlreader.obj
+.\Release\anmxmlsaxreader.obj
+.\Release\SAXContentHandlerImpl.obj
+.\Release\SaxErrorHandlerImpl.obj
+.\Release\SaxLexicalHandlerImpl.obj
+.\Release\anmcriticalsection.obj
+.\Release\cThread.obj
+.\Release\BspTree.obj
+.\Release\COLOR3.obj
+.\Release\COLOR4.obj
+.\Release\Matrix4.obj
+.\Release\Matrix4D.obj
+.\Release\PLANE3.obj
+.\Release\POINT3.obj
+.\Release\POINT3D.obj
+.\Release\anmprogramshader.obj
+.\Release\anmshaderprogram.obj
+.\Release\anmesbrowser.obj
+.\Release\anmescompiler.obj
+.\Release\anmescontext.obj
+.\Release\anmesfields.obj
+.\Release\anmesgrammar.obj
+.\Release\anmeslanguagebinding.obj
+.\Release\anmeslexer.obj
+.\Release\anmesmath.obj
+.\Release\anmesmatrix.obj
+.\Release\anmesnode.obj
+.\Release\anmesobject.obj
+.\Release\anmesstackmachine.obj
+.\Release\anmesstring.obj
+.\Release\anmessymbol.obj
+.\Release\anmesvar.obj
+.\Release\anmscript.obj
+.\Release\anmscriptlanguagebinding.obj
+.\Release\fluxcore.res
+]
+Creating command line "link.exe @C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP6C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+   Creating library Release/fluxcore.lib and object Release/fluxcore.exp
+LINK : warning LNK4098: defaultlib "LIBCMT" conflicts with use of other libs; use /NODEFAULTLIB:library
+<h3>
+--------------------Configuration: fluxdx8 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/fluxdx8.res" /d "NDEBUG" /d "_AFXDLL" "C:\Keith\svnmerge\flux_svn\fluxdx8\fluxdx8.rc"" 
+Creating temporary file "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP70.tmp" with contents
+[
+../fluxcore/Release/fluxcore.lib strmbase.lib Msimg32.lib glu32.lib wininet.lib shlwapi.lib winmm.lib dsound.lib dinput8.lib d3d8.lib d3dx8.lib dxerr8.lib dxguid.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/fluxdx8.pdb" /machine:I386 /def:".\fluxdx8.def" /out:"../Release/fluxdx8.dll" /implib:"Release/fluxdx8.lib" 
+.\Release\anmd3ddevice8.obj
+.\Release\anmd3derrors8.obj
+.\Release\anmd3dgraphics8.obj
+.\Release\anmdikeyboard8.obj
+.\Release\anmdimouse8.obj
+.\Release\anmdinput8.obj
+.\Release\anmdshowmovietextureblitter8.obj
+.\Release\fluxdx8.obj
+.\Release\StdAfx.obj
+.\Release\fluxdx8.res
+]
+Creating command line "link.exe @C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP70.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+   Creating library Release/fluxdx8.lib and object Release/fluxdx8.exp
+LINK : warning LNK4089: all references to "OLEAUT32.dll" discarded by /OPT:REF
+<h3>
+--------------------Configuration: Anima - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/Anima.res" /i "Release" /d "NDEBUG" /d "_AFXDLL" "C:\Keith\svnmerge\flux_svn\Anima.rc"" 
+Creating temporary file "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP74.tmp" with contents
+[
+fluxcore\release\fluxcore.lib imageio\zlib.lib Msimg32.lib glu32.lib wininet.lib shlwapi.lib winmm.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/Anima.pdb" /machine:I386 /def:".\Anima.def" /out:"Release/Anima.ocx" /implib:"Release/Anima.lib" 
+.\Release\Anima.obj
+.\Release\AnimaCtl.obj
+.\Release\AnimaPpg.obj
+.\Release\AnmAboutBox.obj
+.\Release\anmocxplugin.obj
+.\Release\FluxPlayer.obj
+.\Release\StdAfx.obj
+.\Release\X3DBrowser.obj
+.\Release\x3dbrowserbase.obj
+.\Release\X3DBrowserListener.obj
+.\Release\X3DEventOutObserver.obj
+.\Release\x3dexecbase.obj
+.\Release\X3DExecutionContext.obj
+.\Release\X3DExternalBrowser.obj
+.\Release\X3DField.obj
+.\Release\x3dfieldbase.obj
+.\Release\X3DFieldDefinition.obj
+.\Release\X3DFieldDefinitionArray.obj
+.\Release\X3DFieldEventListener.obj
+.\Release\X3DMFColor.obj
+.\Release\X3DMFFloat.obj
+.\Release\X3DMField.obj
+.\Release\X3DMFInt32.obj
+.\Release\X3DMFNode.obj
+.\Release\X3DMFRotation.obj
+.\Release\X3DMFString.obj
+.\Release\X3DMFVec2f.obj
+.\Release\X3DMFVec3f.obj
+.\Release\X3DNode.obj
+.\Release\X3DNodeArray.obj
+.\Release\X3DProtoDeclaration.obj
+.\Release\X3DProtoDeclarationArray.obj
+.\Release\X3DRoute.obj
+.\Release\X3DScene.obj
+.\Release\X3DSFBool.obj
+.\Release\X3DSFColor.obj
+.\Release\X3DSFDouble.obj
+.\Release\X3DSFFloat.obj
+.\Release\X3DSFInt32.obj
+.\Release\X3DSFNode.obj
+.\Release\X3DSFRotation.obj
+.\Release\X3DSFString.obj
+.\Release\X3DSFTime.obj
+.\Release\X3DSFVec2f.obj
+.\Release\X3DSFVec3f.obj
+.\Release\Anima.res
+.\fluxcore\Release\fluxcore.lib
+.\fluxdx8\Release\fluxdx8.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP74.tmp"
+Creating temporary file "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP75.bat" with contents
+[
+@echo off
+regsvr32 /s /c ".\Release\Anima.ocx"
+echo regsvr32 exec. time > ".\Release\regsvr32.trg"
+]
+Creating command line "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP75.bat"
+Compiling resources...
+Linking...
+   Creating library Release/Anima.lib and object Release/Anima.exp
+<h3>Output Window</h3>
+Registering ActiveX Control...
+
+
+
+<h3>Results</h3>
+Anima.ocx - 0 error(s), 2 warning(s)
+<h3>
+--------------------Configuration: npflux - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/npflux.res" /d "NDEBUG" /d "_AFXDLL" "C:\Keith\svnmerge\flux_svn\npflux\npflux.rc"" 
+Creating temporary file "C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP79.tmp" with contents
+[
+..\fluxcore\release\fluxcore.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"Release/npflux.pdb" /machine:I386 /def:".\npflux.def" /out:"../Release/npflux.dll" /implib:"Release/npflux.lib" 
+.\Release\anmmozillaplugin.obj
+.\Release\anmmozplugin.obj
+.\Release\np_entry.obj
+.\Release\npflux.obj
+.\Release\npn_gate.obj
+.\Release\npp_gate.obj
+.\Release\npx3dbrowser.obj
+.\Release\npx3dexecutioncontext.obj
+.\Release\npx3dexternalbrowser.obj
+.\Release\npx3dfield.obj
+.\Release\npx3dfielddefinition.obj
+.\Release\npx3dnode.obj
+.\Release\npx3dprotodeclaration.obj
+.\Release\npx3droute.obj
+.\Release\npx3dscene.obj
+.\Release\plugin.obj
+.\Release\scriptablepluginobject.obj
+.\Release\StdAfx.obj
+.\Release\npflux.res
+\Keith\svnmerge\flux_svn\fluxcore\Release\fluxcore.lib
+\Keith\svnmerge\flux_svn\fluxdx8\Release\fluxdx8.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\HP_Owner\LOCALS~1\Temp\RSP79.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+   Creating library Release/npflux.lib and object Release/npflux.exp
+LINK : warning LNK4089: all references to "OLEAUT32.dll" discarded by /OPT:REF
+
+
+
+<h3>Results</h3>
+npflux.dll - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

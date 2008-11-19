@@ -1,0 +1,1 @@
+..\tools\bison anmesgrammar.y -o anmesgrammar.cpp --defines --no-lines

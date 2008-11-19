@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DRoute.1 = s 'X3DRoute Class'
+	{
+		CLSID = s '{EE3BDCFD-4156-4D11-8227-F8BE60213837}'
+	}
+	Anima.X3DRoute = s 'X3DRoute Class'
+	{
+		CLSID = s '{EE3BDCFD-4156-4D11-8227-F8BE60213837}'
+		CurVer = s 'Anima.X3DRoute.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {EE3BDCFD-4156-4D11-8227-F8BE60213837} = s 'X3DRoute Class'
+		{
+			ProgID = s 'Anima.X3DRoute.1'
+			VersionIndependentProgID = s 'Anima.X3DRoute'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

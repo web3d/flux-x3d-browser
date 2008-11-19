@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{199E558C-AD29-4E5D-9BF1-3C342C39FC58} = s 'Npflux'
+		'Npflux.EXE'
+		{
+			val AppID = s {199E558C-AD29-4E5D-9BF1-3C342C39FC58}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DField.1 = s 'X3DField Class'
+	{
+		CLSID = s '{36ECD09E-F20D-4897-959D-95761801B87D}'
+	}
+	Anima.X3DField = s 'X3DField Class'
+	{
+		CLSID = s '{36ECD09E-F20D-4897-959D-95761801B87D}'
+		CurVer = s 'Anima.X3DField.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {36ECD09E-F20D-4897-959D-95761801B87D} = s 'X3DField Class'
+		{
+			ProgID = s 'Anima.X3DField.1'
+			VersionIndependentProgID = s 'Anima.X3DField'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}

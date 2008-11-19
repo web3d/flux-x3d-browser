@@ -1,0 +1,102 @@
+Building Flux
+
+Last updated: 09-Jul-2006
+
+1. Project info
+
+Flux is built as a Visual Studio 6 Project.
+
+2. Dependencies
+
+a. DirectX
+
+Compilation and linking depends on the availability of Microsoft DirectX Libaries.
+The current version is built against DirectX 8.1. Make sure you have the DirectX8.1 or
+DirectX8.1b SDK on your machine
+
+Make sure you have set the VC++ project options so that the paths to the include
+and library files are found:
+
+i. Select the command Tools->Options...
+
+ii. Select the Directories tab
+
+
+iii. Select the combo box labeled Show directories for and choose Include files
+
+Add the following path and move it to the top
+<directx sdk path>\include
+
+iv. Select the combo box labeled Show directories for and choose Library files
+
+Add the following path and move it to the top
+<directx sdk path>\lib
+
+
+b. DirectShow
+
+Flux uses DirectShow for audio and video rendering. 
+
+Before you can compile and link Flux you need to build the DirectShow base classes
+found in:
+
+<directx sdk path>\Samples\C++\DirectShow\BaseClasses
+
+You need to put the path to the DirectShow include directory in your Tools->Options
+(see 2.a above for instructions)
+
+*** NOTE: At the moment there is a hard-coded path to the DirectShow libraries;
+this should be put in an environment variable for project portability.
+
+
+c. Mozilla headers
+
+The Mozilla plugin is built against version 1.7 of the Gecko SDK. Make sure you have
+version 1.7 or higher from Mozilla.org.
+
+*** NOTE: At the moment there is a hard-coded path to the Gecko headers and libraries;
+this should be put in an environment variable for project portability.
+
+3. Building it
+
+Once the above dependencies are in place, Flux should just build. 
+
+a. ActiveX Control
+
+Building the 'Anima' project produces the following files:
+
+	Anima.OCX (ActiveX control)
+	fluxcore.dll (core code)
+	fluxdx8.dll (DirectX 8 rendering)
+	
+
+The OCX self-registration sets up the MIME types so that Internet Explorer will load
+Flux to play X3D and VRML files. If you do not wish to register Flux as player for VRML97
+(.wrl) files, then make sure the preprocessor symbol 'REGISTER_WRL' is not defined.
+See the Project Settings for Anima.OCX
+
+b. Mozilla plugin
+
+Building the 'npflux' project produces the following files:
+
+	npflux.dll (Mozilla plugin)
+	fluxcore.dll (core code)
+	fluxdx8.dll (DirectX 8 rendering)
+
+
+The build does not set up Flux to play in Mozilla; this has to be done by copying the above
+3 files to the 'plugins' directory for that version of Mozilla. 
+
+The resource file for the Mozilla plugin sets up the MIME types so that Mozilla will load
+Flux to play X3D and VRML files. If you do not wish to register Flux as player for VRML97
+(.wrl) files, then make sure to remove the .wrl file extension and associated MIME types
+from the Version resource.
+
+4. Installer
+
+There is no pre-packaged installer with the current version; you need to create your own.
+
+5. Questions?
+
+Send email to flux-source@mediamachines.com
+

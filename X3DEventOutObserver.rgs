@@ -1,0 +1,26 @@
+HKCR
+{
+	Anima.X3DEventOutObserver.1 = s 'X3DEventOutObserver Class'
+	{
+		CLSID = s '{5DCC9CD7-5A07-4E96-9406-8F08FCE28F1B}'
+	}
+	Anima.X3DEventOutObserver = s 'X3DEventOutObserver Class'
+	{
+		CLSID = s '{5DCC9CD7-5A07-4E96-9406-8F08FCE28F1B}'
+		CurVer = s 'Anima.X3DEventOutObserver.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {5DCC9CD7-5A07-4E96-9406-8F08FCE28F1B} = s 'X3DEventOutObserver Class'
+		{
+			ProgID = s 'Anima.X3DEventOutObserver.1'
+			VersionIndependentProgID = s 'Anima.X3DEventOutObserver'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{CB2426CF-7360-42CA-AEF2-6FBD9F959ED4}'
+		}
+	}
+}
